@@ -1,0 +1,199 @@
+/* styles.css */
+
+/* Common styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #00274C; /* Michigan Wolverine blue */
+    color: #FFCB05; /* Michigan gold */
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    display: inline;
+}
+
+/* Navigation specific styles */
+nav {
+    text-align: center; /* Align navigation to the right */
+}
+
+nav ul {
+    list-style-type: none;
+    display: inline;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px; /* Adjust spacing between navigation items */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Remove left margin from the first navigation item */
+}
+
+nav ul li a {
+    color: #FFCB05; /* Michigan gold */
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; /* Specifies normal weight */
+    
+}
+
+footer {
+    background-color: #00274C; /* Michigan Wolverine blue */
+    color: #FFCB05; /* Michigan gold */
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+/* Login page specific styles */
+.login-section{
+    padding: 30px 0;
+    text-align: center;
+}
+
+.login-section h2 {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #FFCB05; /* Michigan gold */
+    color: #00274C; /* Michigan Wolverine blue */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #FDC82F; /* Lighter gold */
+}
+
+p {
+    margin-top: 20px;
+}
+
+p a {
+    color: #00274C; /* Michigan Wolverine blue */
+}
+
+
+/* Register page specific styles */
+.register-section{
+    padding: 30px 0;
+    text-align: center;
+}
+
+.register-section h2 {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #FFCB05; /* Michigan gold */
+    color: #00274C; /* Michigan Wolverine blue */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #FDC82F; /* Lighter gold */
+}
+
+p {
+    margin-top: 20px;
+}
+
+p a {
+    color: #00274C; /* Michigan Wolverine blue */
+}
+
+/* Home page specific styles */
+.home-section{
+    padding: 30px 0;
+    text-align: center;
+}
+
+.home-section h2 {
+    margin-bottom: 30px;
+}
+
+.floating-share {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.floating-share .share-btn {
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.floating-share .share-btn:last-child {
+    margin-bottom: 0;
+}
+
+.floating-share .share-btn:hover {
+    background-color: #0056b3;
+}

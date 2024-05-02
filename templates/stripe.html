@@ -1,0 +1,18 @@
+<!-- myapp/templates/purchase_with_stripe.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment with Stripe</title>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+</head>
+<body>
+    <h1>Payment with Stripe</h1>
+    <form action="{% url 'purchase_with_stripe' %}" method="post" id="payment-form">
+        {% csrf_token %}
+        <button id="checkout-button">Pay with Stripe</button>
+    </form>
+    <script>
+        var stripe = Stripe
