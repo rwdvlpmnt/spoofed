@@ -22,17 +22,18 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 connection_string = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
-parameters = {tuple(pair.split('=')): pair.split('=')[1] for pair in connection_string.split(' ')}
+#parameters = {tuple(pair.split('=')): pair.split('=')[1] for pair in connection_string.split(' ')}
 
 #parameters = {pair.split('='):pair.split('=')[1] for pair in connection_string.split(' ')}
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': parameters['dbname'],
-        'USER': parameters['user'],
-        'PASSWORD': parameters['password'],
-        'HOST': parameters['host'],
-        'PORT': parameters['port'],
+        'NAME': 'spoofed-database',
+        'USER': 'lojpqrcenx',
+        'PASSWORD': 'Sp808MLLfKTniy$q',
+        'HOST': 'spoofed-server.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'}
     }
 }
