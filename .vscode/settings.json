@@ -5,5 +5,7 @@
         "Tele",
         "Tniy",
         "ymofu"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/4f2b2bac-5252-40cf-a545-803eb52fdfbe/resourceGroups/Webapp_RG/providers/Microsoft.Web/sites/spoofed",
+    "appService.deploySubpath": "."
 }
