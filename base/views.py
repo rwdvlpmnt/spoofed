@@ -2,19 +2,19 @@ from django.shortcuts import render, redirect
 
 
 def login(request):
-    return render(request, 'Login.html')
+    return render(request, 'login.html')
 
 def register(request):
-    return render(request, 'Register.html')
+    return render(request, 'register.html')
 
 def logout(request):
-    return render(request, 'Logout.html')
+    return render(request, 'logout.html')
 
 def home(request):
-    return render(request, 'Home.html')
+    return render(request, 'home.html')
 
 def profile(request):
-    return render(request, 'Profile.html')
+    return render(request, 'profile.html')
 # Create your views here.
 
 def google_login(request):
@@ -26,11 +26,11 @@ def google_oauth_view(request):
     return redirect('home') # Redirect to 'home' or any other URL after successful authentication
 
 def features(request):
-    return render(request, 'Features.html')
+    return render(request, 'features.html')
  
 
 def pricing(request):
-    return render(request, 'Pricing.html')
+    return render(request, 'pricing.html')
 
 def contact(request):
-    return render(request, 'Contact.html')
+    return render(request, 'contact.html')
