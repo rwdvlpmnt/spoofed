@@ -1,18 +1,13 @@
-"""
-WSGI config for phoneApp project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
-"""
-
 import os
 
 from django.core.wsgi import get_wsgi_application
 
-settings_module = 'phoneApp.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'phoneApp.settings'
+if any(host in os.environ.get('ALLOWED_HOSTS', '').split(',') for host in ['spoofed.azurewebsites.net', 'youbeenspoofed.com', 'www.spoofed.azurewebsites.net', 'www.youbeenspoofed.com']):
+    settings_module = 'phoneApp.production'
+else:
+    settings_module = 'phoneApp.settings'
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_wsgi_application()
+
