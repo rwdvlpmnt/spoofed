@@ -28,9 +28,11 @@ def google_oauth_view(request):
 def features(request):
     return render(request, 'features.html')
  
-
 def pricing(request):
     return render(request, 'pricing.html')
 
 def contact(request):
     return render(request, 'contact.html')
+
+def keypad(request):
+    return render(request, 'keypad.html')
