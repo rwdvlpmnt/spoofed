@@ -13,7 +13,7 @@ urlpatterns = [
     path('oauth/google/', views.google_oauth_view, name='google_oauth_url'),# Other URL patterns
     path('features/', views.features, name='features'),
     path('pricing/', views.pricing, name='pricing'),
-    path('keypad/', views.keypad, name='keypad'),
+  # path('keypad/', views.keypad, name='keypad'),
     path('contact/', views.contact, name='contact'),
     path('registration/login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
                     #...

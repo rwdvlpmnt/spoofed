@@ -13,41 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <style>
-        .header-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-    </style>
 </head>
 
 <body>
     <header>
-        <div class="header-container">
-            <video src="{% static 'youbeenspoofed.mp4' %}" autoplay muted loop></video>
-            <nav class="nav-container">
+        <div class="container">
+            <h1>SPOOFED!</h1>
+            <nav>
                 <ul>
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'features' %}">Features</a></li>
                     <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                    <Li><a href="{% url 'keypad' %}">Spoof</a></Li>
-                   <!--<li><a href="{% url 'register' %}">Sign Up</a></li>-->
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Login</a></li> <!-- Add login link -->
                 </ul>
             </nav>
@@ -57,20 +34,22 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Your page content -->
+    <body>
+        <!-- Your page content -->
 
-    <!-- Floating share buttons -->
-    <div class="floating-share">
-        <a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="share-btn"><i class="fab fa-linkedin-in"></i></a>
-        <!-- Add more share buttons as needed -->
-    </div>
+        <!-- Floating share buttons -->
+        <div class="floating-share">
+            <a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="share-btn"><i class="fab fa-linkedin-in"></i></a>
+            <!-- Add more share buttons as needed -->
+        </div>
 
-    <!-- External JavaScript libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Your custom JavaScript -->
-    <script src="{% static 'script.js' %}"></script>
+        <!-- External JavaScript libraries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Your custom JavaScript -->
+        <script src="{% static 'script.js' %}"></script>
+    </body>
 
     <footer>
         <div class="container">
