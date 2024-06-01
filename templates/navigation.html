@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Navigation
+{% endblock %}
+
+{% block content %}
+<section class="navigation-section">
+    <div class="container">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'features' %}">Features</a></li>
+                <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                <li><a href="{% url 'register' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+{% endblock %}

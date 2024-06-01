@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}SPOOFED!{% endblock %}</title>
+    <title>{% block title %}You Been SPOOFED!{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -15,44 +15,41 @@
 <body>
     <header>
         <div class="container">
-            <div class="header-left">
-                <img src="{% static 'images/FullLogo_Transparent_NoBuffer.png' %}" alt="Spoofed Logo" class="logo">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'images/FullLogo_Transparent_NoBuffer.png' %}" alt="Spoofed Logo">
+                    </a>
+                </div>
+                <div class="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-            <div class="header-right">
-                <nav>
-                    <ul>
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'features' %}">Features</a></li>
-                        <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                        <li><a href="{% url 'register' %}">Sign Up</a></li>
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'features' %}">Features</a></li>
+                    <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     {% block content %}
     {% endblock %}
 
-    <!-- Floating share buttons -->
-    <div class="floating-share">
-        <a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="share-btn"><i class="fab fa-linkedin-in"></i></a>
-        <!-- Add more share buttons as needed -->
-    </div>
-
-    <!-- External JavaScript libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Your custom JavaScript -->
-    <script src="{% static 'script.js' %}"></script>
-
     <footer>
         <div class="container">
             <p>&copy; 2024 TeleTechnologies. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- External JavaScript libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Your custom JavaScript -->
+    <script src="{% static 'script.js' %}"></script>
 </body>
 
 </html>

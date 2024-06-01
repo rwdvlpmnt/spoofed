@@ -46,3 +46,6 @@ def process_phone_numbers(request):
         return redirect('phone_input')  # Redirect back to the form or another page
     return redirect('phone_input')
 
+def navigation(request):
+    return render(request, 'navigation.html')
+

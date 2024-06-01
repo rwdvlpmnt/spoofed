@@ -13,3 +13,13 @@ $(document).ready(function(){
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const menuIcon = document.querySelector('.menu-icon img');
+    const navMenu = document.querySelector('.main-nav ul');
+
+    menuIcon.addEventListener('click', function () {
+        navMenu.classList.toggle('show');
+        menuIcon.classList.toggle('active');
+    });
+});
+
