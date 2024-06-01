@@ -4,7 +4,7 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +17,7 @@ header {
 }
 
 .header-left .logo {
-    height: 40px; /* Adjust the logo size */
+    height: 96px; /* Adjust the logo size */
 }
 
 .header-right nav ul {
@@ -29,7 +29,7 @@ header {
 .header-right nav ul li a {
     color: #5AA9E6; /* Powder blue */
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 5px 7px;
     transition: color 0.3s;
 }
 
@@ -45,7 +45,7 @@ body {
 footer {
     background-color: #5AA9E6; /* Powder blue */
     color: #FFFFFF; /* White */
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
