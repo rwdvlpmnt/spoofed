@@ -9,8 +9,8 @@
 
 header {
     text-align: center;
-    background-color: #00274C; /* Michigan Wolverine blue */
-    color: #FFCB05; /* Michigan gold */
+    background-color: #5AA9E6; /* Powder blue */
+    color: #FFFFFF; /* White for text contrast */
     padding: 20px 0;
 }
 
@@ -21,7 +21,7 @@ header h1 {
 
 /* Navigation specific styles */
 nav {
-    text-align: center; /* Align navigation to the right */
+    text-align: center; /* Align navigation to the center */
 }
 
 nav ul {
@@ -39,27 +39,24 @@ nav ul li:first-child {
 }
 
 nav ul li a {
-    color: #FFCB05; /* Michigan gold */
+    color: #FFFFFF; /* White */
     text-decoration: none;
 }
-
 
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400; /* Specifies normal weight */
-    
 }
 
 footer {
-    background-color: #00274C; /* Michigan Wolverine blue */
-    color: #FFCB05; /* Michigan gold */
+    background-color: #5AA9E6; /* Powder blue */
+    color: #FFFFFF; /* White */
     padding: 20px 0;
     text-align: center;
 }
 
-
 /* Login page specific styles */
-.login-section{
+.login-section {
     padding: 30px 0;
     text-align: center;
 }
@@ -87,8 +84,8 @@ footer {
 
 .btn {
     display: inline-block;
-    background-color: #FFCB05; /* Michigan gold */
-    color: #00274C; /* Michigan Wolverine blue */
+    background-color: #5AA9E6; /* Powder blue */
+    color: #FFFFFF; /* White */
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -96,7 +93,7 @@ footer {
 }
 
 .btn:hover {
-    background-color: #FDC82F; /* Lighter gold */
+    background-color: #4A91C8; /* Darker powder blue */
 }
 
 p {
@@ -104,12 +101,11 @@ p {
 }
 
 p a {
-    color: #00274C; /* Michigan Wolverine blue */
+    color: #5AA9E6; /* Powder blue */
 }
 
-
 /* Register page specific styles */
-.register-section{
+.register-section {
     padding: 30px 0;
     text-align: center;
 }
@@ -137,8 +133,8 @@ p a {
 
 .btn {
     display: inline-block;
-    background-color: #FFCB05; /* Michigan gold */
-    color: #00274C; /* Michigan Wolverine blue */
+    background-color: #5AA9E6; /* Powder blue */
+    color: #FFFFFF; /* White */
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -146,7 +142,7 @@ p a {
 }
 
 .btn:hover {
-    background-color: #FDC82F; /* Lighter gold */
+    background-color: #4A91C8; /* Darker powder blue */
 }
 
 p {
@@ -154,11 +150,11 @@ p {
 }
 
 p a {
-    color: #00274C; /* Michigan Wolverine blue */
+    color: #5AA9E6; /* Powder blue */
 }
 
 /* Home page specific styles */
-.home-section{
+.home-section {
     padding: 30px 0;
     text-align: center;
 }
@@ -177,7 +173,7 @@ p a {
 
 .floating-share .share-btn {
     display: block;
-    background-color: #007bff;
+    background-color: #5AA9E6; /* Powder blue */
     color: #fff;
     border-radius: 50%;
     width: 40px;
@@ -195,5 +191,5 @@ p a {
 }
 
 .floating-share .share-btn:hover {
-    background-color: #0056b3;
+    background-color: #4A91C8; /* Darker powder blue */
 }
