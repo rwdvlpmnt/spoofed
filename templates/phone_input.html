@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Phone Input
+{% endblock %}
+
+{% block content %}
+<section class="phone-input-section">
+    <div class="container">
+        <h2>Phone Number Input</h2>
+        <form action="{% url 'process_phone_numbers' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="number_to_call">Number to Call:</label>
+                <input type="tel" id="number_to_call" name="number_to_call" class="phone-input"
+                    placeholder="Enter number to call" required>
+            </div>
+            <div class="form-group">
+                <label for="number_calling_from">Number Calling From:</label>
+                <input type="tel" id="number_calling_from" name="number_calling_from" class="phone-input"
+                    placeholder="Enter number calling from" required>
+            </div>
+            <div class="form-group">
+                <label for="my_number">My Number:</label>
+                <input type="tel" id="my_number" name="my_number" class="phone-input" placeholder="Enter your number"
+                    required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

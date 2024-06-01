@@ -16,5 +16,6 @@ urlpatterns = [
   # path('keypad/', views.keypad, name='keypad'),
     path('contact/', views.contact, name='contact'),
     path('registration/login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
-                    #...
+    path('phone-input/', views.phone_input, name='phone_input'),
+    path('process-phone-numbers/', views.process_phone_numbers, name='process_phone_numbers'),                #...
     ]

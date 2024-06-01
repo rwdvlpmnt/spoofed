@@ -34,5 +34,15 @@ def pricing(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def keypad(request):
-    return render(request, 'keypad.html')
+def phone_input(request):
+    return render(request, 'phone_input.html')
+
+def process_phone_numbers(request):
+    if request.method == 'POST':
+        number_to_call = request.POST.get('number_to_call')
+        number_calling_from = request.POST.get('number_calling_from')
+        my_number = request.POST.get('my_number')
+        # Process the numbers as needed
+        return redirect('phone_input')  # Redirect back to the form or another page
+    return redirect('phone_input')
+
