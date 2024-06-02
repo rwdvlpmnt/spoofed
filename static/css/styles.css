@@ -25,6 +25,7 @@ header {
     width: auto;  /* Ensure the width scales appropriately */
 }
 
+/* Header and Navigation */
 .header-right {
     position: relative;
     display: flex;
@@ -66,6 +67,42 @@ header {
 .header-right nav ul li a:hover {
     color: #4A91C8; /* Darker powder blue */
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header-right nav {
+        display: none;
+    }
+    .header-right .menu-icon {
+        display: block;
+    }
+    .header-right nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 95px; /* Align below the header */
+        right: 0;
+        background-color: #FFFFFF; /* White background */
+        width: 100%;
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    .header-right nav ul li {
+        text-align: center;
+        margin: 0;
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd; /* Optional: Add a border between menu items */
+    }
+    .header-right nav ul li a {
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
+    .header-right nav ul.responsive {
+        display: flex;
+    }
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -243,4 +280,45 @@ footer {
 
 .pricing-plan .btn:hover {
     background-color: #4A91C8;
+}
+
+/* Ensure accordion headers are full width in portrait mode */
+@media (max-width: 768px) {
+    .accordion-header {
+        width: 100%;
+    }
+    .pricing-plan {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .home-section .container {
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Floating elements */
+.home-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.float-element {
+    position: absolute;
+    background-color: rgba(90, 169, 230, 0.1); /* Powder blue with transparency */
+    border-radius: 50%;
+    z-index: -1; /* Place behind the content */
+}
+
+.float-element.one {
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    left: -50px;
+}
+
+.float-element.two {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    right: -100px;
 }
