@@ -26,17 +26,20 @@
             
             <div class="header-right">
                 <div class="menu-icon">
-                    <i class="fas fa-bars"></i>
+                    <a href="{% url 'navigation' %}">
+                        <i class="fas fa-bars"></i>
+                    </a>
                 </div>
                 <nav class="main-nav">
                     <ul>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'features' %}">Features</a></li>
-                    <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                    <li><a href="{% url 'register' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'features' %}">Features</a></li>
+                        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                        <li><a href="{% url 'register' %}">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
                     </ul>
                 </nav>
+            
             </div>
         </div>
     </header>

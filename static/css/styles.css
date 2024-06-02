@@ -2,7 +2,7 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +17,7 @@ header {
 
 .header-left {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -66,7 +66,7 @@ body {
 footer {
     background-color: #5AA9E6; /* Powder blue */
     color: #FFFFFF; /* White */
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
