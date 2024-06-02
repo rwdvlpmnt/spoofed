@@ -1,6 +1,6 @@
 /* Common styles */
 .container {
-    max-width: 1200px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -38,9 +38,9 @@ header {
 }
 
 .header-right .menu-icon .icon {
-    font-size: 30px; /* Adjust the size of the menu icon */
+    font-size: 50px; /* Adjust the size of the menu icon */
     color: #5AA9E6; /* Powder blue */
-    height: 95px; /* Match the height of the logo */
+    height: 100px; /* Match the height of the logo */
     line-height: 95px; /* Vertically center the icon */
 }
 
@@ -103,7 +103,6 @@ header {
     }
 }
 
-
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400; /* Specifies normal weight */
@@ -114,16 +113,6 @@ footer {
     color: #FFFFFF; /* White */
     padding: 20px 0;
     text-align: center;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .header-right nav {
-        display: none;
-    }
-    .header-right .menu-icon {
-        display: block;
-    }
 }
 
 .phone-input-section {
@@ -321,4 +310,133 @@ footer {
     height: 200px;
     bottom: -100px;
     right: -100px;
+}
+
+/* Login Section */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 20px;
+}
+
+.login-section .container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-section .form-group {
+    margin-bottom: 15px;
+}
+
+.login-section .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-section .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-section .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5AA9E6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-section .btn:hover {
+    background-color: #4A91C8;
+}
+
+.login-section p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.login-section a {
+    color: #5AA9E6;
+    text-decoration: none;
+}
+
+.login-section a:hover {
+    text-decoration: underline;
+}
+
+/* Share Buttons */
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.share-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.share-button:hover {
+    background-color: #0056b3;
+}
+
+/* Google Sign-in */
+.google-signin {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.google-signin .btn-google {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DB4437; /* Google red */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.google-signin .btn-google:hover {
+    background-color: #c23321;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .login-section .container {
+        padding: 10px;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+    }
+
+    .share-button {
+        margin: 10px 0;
+    }
 }
