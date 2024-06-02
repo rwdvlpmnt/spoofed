@@ -36,9 +36,11 @@ header {
     cursor: pointer;
 }
 
-.header-right .menu-icon i {
+.header-right .menu-icon .icon {
     font-size: 30px; /* Adjust the size of the menu icon */
     color: #5AA9E6; /* Powder blue */
+    height: 95px; /* Match the height of the logo */
+    line-height: 95px; /* Vertically center the icon */
 }
 
 .header-right nav {
@@ -91,7 +93,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 75vh;
 }
 
 .phone-input-section .container {
@@ -162,4 +164,11 @@ footer {
     display: none;
     padding: 10px;
     border-top: 1px solid #ccc;
+}
+
+/* Ensure accordion headers are full width in portrait mode */
+@media (max-width: 768px) {
+    .accordion-header {
+        width: 100%;
+    }
 }
