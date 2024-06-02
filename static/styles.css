@@ -6,37 +6,61 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header {
     background-color: #FFFFFF; /* White background */
     padding: 10px 0;
     width: 100%;
-    border-bottom: 1px solid #ddd;
 }
 
-.header-content {
+.header-left {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
-.logo img {
-    max-height: 90px; /* Adjust the logo size */
+.header-left .logo {
+    height: 90px; /* Adjust the logo size */
 }
 
-.menu-icon img {
-    width: 30px; /* Adjust as needed */
+.header-right {
+    position: relative;
+}
+
+.header-right .menu-icon {
+    display: none;
     cursor: pointer;
 }
 
-/* Basic styles */
+.header-right nav {
+    display: flex;
+}
+
+.header-right nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.header-right nav ul li a {
+    color: #5AA9E6; /* Powder blue */
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.header-right nav ul li a:hover {
+    color: #4A91C8; /* Darker powder blue */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400; /* Specifies normal weight */
-    margin: 0;
-    padding: 0;
 }
 
 footer {
@@ -46,157 +70,35 @@ footer {
     text-align: center;
 }
 
-/* Page-specific styles */
-.login-section, .register-section, .home-section, .phone-input-section {
-    padding: 30px 0;
-    text-align: center;
-}
-
-.login-section h2, .register-section h2, .phone-input-section h2, .home-section h2 {
-    margin-bottom: 30px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.phone-input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #5AA9E6; /* Powder blue */
-    color: #FFFFFF; /* White */
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #4A91C8; /* Darker powder blue */
-}
-
-p {
-    margin-top: 20px;
-}
-
-p a {
-    color: #5AA9E6; /* Powder blue */
-}
-
-/* Home page specific styles */
-.home-section h2, .home-section h3, .home-section h4, .home-section p {
-    color: #00274C; /* Use your desired color */
-}
-
-.home-section h4 {
-    color: #5AA9E6; /* Use the powder blue from your logo */
-}
-
-/* Floating share button styles */
-.floating-share {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 999;
-}
-
-.floating-share .share-btn {
-    display: block;
-    background-color: #5AA9E6; /* Powder blue */
-    color: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.floating-share .share-btn:hover {
-    background-color: #4A91C8; /* Darker powder blue */
-}
-
-/* Media queries */
+/* Mobile styles */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
+    .header-right nav {
+        display: none;
+    }
+    .header-right .menu-icon {
+        display: block;
     }
 }
 
 /* Accordion styles */
-.accordion {
-    width: 100%;
-}
-
-.accordion-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px 0;
-    overflow: hidden;
-}
-
 .accordion-header {
-    background-color: #5AA9E6; /* Powder blue */
-    color: #FFFFFF; /* White */
+    background-color: #5AA9E6;
+    color: white;
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
     text-align: left;
     outline: none;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
     border: none;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    transition: background-color 0.3s ease;
 }
 
-.accordion-header:hover,
 .accordion-header.active {
-    background-color: #4A91C8; /* Darker powder blue */
-}
-
-.accordion-header::after {
-    content: '\002B'; /* Plus symbol */
-    font-size: 18px;
-}
-
-.accordion-header.active::after {
-    content: '\2212'; /* Minus symbol */
+    background-color: #4A91C8;
 }
 
 .accordion-content {
-    background-color: #f9f9f9;
     display: none;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-}
-
-@media (max-width: 768px) {
-    .accordion-header {
-        font-size: 16px;
-    }
+    padding: 10px;
+    border-top: 1px solid #ccc;
 }
