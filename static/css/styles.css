@@ -27,11 +27,18 @@ header {
 
 .header-right {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .header-right .menu-icon {
     display: none;
     cursor: pointer;
+}
+
+.header-right .menu-icon i {
+    font-size: 30px; /* Adjust the size of the menu icon */
+    color: #5AA9E6; /* Powder blue */
 }
 
 .header-right nav {
