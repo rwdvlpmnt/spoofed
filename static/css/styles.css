@@ -21,7 +21,7 @@ header {
 }
 
 .header-left .logo img {
-    height: 90px; /* Adjust the logo size */
+    height: 100px; /* Adjust the logo size */
     width: auto;  /* Ensure the width scales appropriately */
 }
 
@@ -151,6 +151,7 @@ footer {
     border: none;
     width: 100%;
     transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width */
 }
 
 .accordion-header.active {
