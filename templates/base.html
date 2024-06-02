@@ -1,5 +1,5 @@
 {% load static %}
-                 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}SPOOFED!{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -17,30 +15,15 @@
     <header>
         <div class="container header-content">
             <div class="header-left">
-                 <div class="logo">
-                    <a href="{% url 'home' %}">
-                        <img src="{% static 'images/FullLogo_Transparent_NoBuffer.png' %}" alt="Spoofed Logo">
-                     </a>
-                </div>
+                <a href="/" class="logo"><img src="{% static 'images/FullLogo_Transparent_NoBuffer.png' %}"
+                        alt="Logo"></a>
             </div>
-            
             <div class="header-right">
                 <div class="menu-icon">
                     <a href="{% url 'navigation' %}">
                         <i class="fas fa-bars"></i>
                     </a>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'features' %}">Features</a></li>
-                        <li><a href="{% url 'phone_input' %}">Spoof Call</a></li>
-                        <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                        <!-- <li><a href="{% url 'register' %}">Sign Up</a></li> -->
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                    </ul>
-                </nav>
-            
+                </div>>
             </div>
         </div>
     </header>
