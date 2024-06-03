@@ -1,89 +1,57 @@
 {% extends 'base.html' %}
-{% url 'password_reset' %}
 
-{% block title %}Register - TeleTechnologies{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% block content %}
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Share Buttons</title>
-<style>
-.share-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.share-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  margin: 0 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.share-button:hover {
-  background-color: #0056b3;
-}
-</style>
-</head>
 <section class="register-section">
-    <div class="container">
-        <h2>Register to TeleTechnologies</h2>
-        <form action="{% url 'register' %}" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn">Register</button>
-        </form>
-        <p>Have an account? <a href="{% url 'login' %}">Login here</a>.</p> <!-- Link to login page -->
-        <p>Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.</p>   <!-- Link to password reset page -->
+  <div class="container">
+    <h2>Register to Spoof Solutions</h2>
+    <form action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="credit-card">Credit Card</label>
+        <input type="text" id="credit-card" name="credit-card" required>
+      </div>
+      <button type="submit" class="btn">Register</button>
+    </form>
+    <p>Have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+    <p>Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.</p>
 
-        
-        <!-- Share links -->
-        <div class="share-buttons">
-            <button class="share-button" onclick="shareFacebook()">Share on Facebook</button>
-            <button class="share-button" onclick="shareTwitter()">Share on Twitter</button>
-            <button class="share-button" onclick="shareLinkedIn()">Share on LinkedIn</button>
-        </div>
-
-
-        <!-- Sign in with Google -->
-        <div class="google-signin">
-            <p>Or sign in with:</p>
-            <a href="{% url 'google_login' %}" class="btn-google">Sign in with Google</a>
-        </div>
+    <!-- Social Media Sign-In -->
+    <div class="social-signin">
+      <p>Or sign in with:</p>
+      <button class="btn-facebook" onclick="signInWithFacebook()"><i class="fab fa-facebook-f"></i> Sign in with
+        Facebook</button>
+      <button class="btn-google" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Sign in with Google</button>
+      <button class="btn-twitter" onclick="signInWithTwitter()"><i class="fab fa-twitter"></i> Sign in with
+        Twitter</button>
     </div>
+  </div>
 </section>
 
 <script>
-function shareFacebook() {
-  // Replace example.com with your URL
-  window.open('https://www.facebook.com/sharer/sharer.php?u=https://example.com', '_blank');
-}
+  function signInWithFacebook() {
+    window.open('{% url "facebook_login" %}', '_self');
+  }
 
-function shareTwitter() {
-  // Replace example.com with your URL
-  window.open('https://twitter.com/intent/tweet?url=https://example.com', '_blank');
-}
+  function signInWithGoogle() {
+    window.open('{% url "google_login" %}', '_self');
+  }
 
-function shareLinkedIn() {
-  // Replace example.com with your URL
-  window.open('https://www.linkedin.com/shareArticle?url=https://example.com', '_blank');
-}
+  function signInWithTwitter() {
+    window.open('{% url "twitter_login" %}', '_self');
+  }
 </script>
-
 {% endblock %}

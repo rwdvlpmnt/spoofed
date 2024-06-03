@@ -169,7 +169,35 @@ footer {
 }
 
 /* Accordion styles */
+.accordion-header {
+    background-color: #5AA9E6;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    outline: none;
+    border: none;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width */
+}
 
+.accordion-header.active {
+    background-color: #4A91C8;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+/* Ensure accordion headers are full width in portrait mode */
+@media (max-width: 768px) {
+    .accordion-header {
+        width: 100%;
+    }
+}
 
 /* Pricing Section */
 .pricing-section {
@@ -245,7 +273,9 @@ footer {
 
 /* Ensure accordion headers are full width in portrait mode */
 @media (max-width: 768px) {
-
+    .accordion-header {
+        width: 100%;
+    }
     .pricing-plan {
         flex: 1 1 100%;
         max-width: 100%;
@@ -511,58 +541,6 @@ footer {
 /* Mobile styles */
 @media (max-width: 768px) {
     .register-section .container, .login-section .container {
-        padding: 10px;
-    }
-}
-
-/* Container styles */
-.home-section .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Feature block styles */
-.feature-block {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: revolve 1s ease-in-out;
-}
-
-.feature-block h3 {
-    margin-top: 0;
-    color: #007bff;
-}
-
-.feature-block p {
-    margin: 10px 0 0;
-}
-
-/* Revolving animation */
-@keyframes revolve {
-    from {
-        transform: rotateY(-180deg);
-        opacity: 0;
-    }
-    to {
-        transform: rotateY(0);
-        opacity: 1;
-    }
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .home-section .container {
-        padding: 10px;
-    }
-
-    .feature-block {
         padding: 10px;
     }
 }
