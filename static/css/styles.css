@@ -566,3 +566,164 @@ footer {
         padding: 10px;
     }
 }
+
+/* Navigation styles */
+.navigation-section .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #000;
+}
+
+.nav-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle-icon {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-toggle-icon::before {
+    top: -10px;
+}
+
+.nav-toggle-icon::after {
+    top: 10px;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+}
+
+.nav-menu.show-menu {
+    display: flex;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.nav-menu a:hover {
+    background: #1a1a1a;
+}
+
+.btn.demo {
+    background-color: #ff4500;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn.get-started {
+    background-color: transparent;
+    color: #ff4500;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 20px;
+    border: 1px solid #ff4500;
+    border-radius: 5px;
+}
+
+/* Mobile styles */
+@media (min-width: 768px) {
+    .main-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-menu li {
+        margin: 0;
+    }
+
+    .nav-menu a {
+        padding: 10px 20px;
+    }
+}
+
+/* Feature block styles */
+.feature-block {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 1s ease-in-out;
+}
+
+.feature-block.rotate {
+    transform: rotateY(360deg);
+}
+
+/* General styles */
+.home-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.home-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.home-section p {
+    text-align: justify;
+}

@@ -15,7 +15,7 @@ Why Choose Spoofed Solutions?
             looking to take their communication experience to the next level.</p>
 
         <!-- Enhanced Privacy and Anonymity -->
-        <div class="feature-block">
+        <div class="feature-block" id="feature1">
             <h3>Enhanced Privacy and Anonymity</h3>
             <p>Spoofed Solutions takes privacy seriously, allowing users to disguise their caller ID during calls. This
                 feature is invaluable for individuals who prioritize anonymity or wish to keep their personal
@@ -24,7 +24,7 @@ Why Choose Spoofed Solutions?
         </div>
 
         <!-- Advanced Features -->
-        <div class="feature-block">
+        <div class="feature-block" id="feature2">
             <h3>Advanced Features</h3>
             <p>One of Spoofed Solutions’s standout features is its call recording and voice-changing capabilities. Users
                 can record their calls for future reference or simply for added security. Moreover, Spoofed Solutions
@@ -34,7 +34,7 @@ Why Choose Spoofed Solutions?
         </div>
 
         <!-- Customization -->
-        <div class="feature-block">
+        <div class="feature-block" id="feature3">
             <h3>Customization</h3>
             <p>Spoofed Solutions offers a range of customization options, allowing users to control how their calls
                 appear to recipients. This level of flexibility is especially useful for professionals, businesses, or
@@ -44,7 +44,7 @@ Why Choose Spoofed Solutions?
         </div>
 
         <!-- User-Friendly Interface -->
-        <div class="feature-block">
+        <div class="feature-block" id="feature4">
             <h3>User-Friendly Interface</h3>
             <p>Spoofed Solutions prides itself on its user-friendly interface, making it easy for tech-savvy users and
                 those less familiar with advanced communication tools. The intuitive design ensures users can navigate
@@ -54,7 +54,7 @@ Why Choose Spoofed Solutions?
         </div>
 
         <!-- Dedicated Customer Support -->
-        <div class="feature-block">
+        <div class="feature-block" id="feature5">
             <h3>Dedicated Customer Support</h3>
             <p>Spoofed Solutions distinguishes itself by providing dedicated customer support to assist users with
                 issues or inquiries. This personalized approach ensures that users can trust the service and rely on
@@ -67,4 +67,28 @@ Why Choose Spoofed Solutions?
             businesses.</p>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const options = {
+            threshold: 0.5
+        };
+
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('rotate');
+                } else {
+                    entry.target.classList.remove('rotate');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, options);
+
+        document.querySelectorAll('.feature-block').forEach(block => {
+            observer.observe(block);
+        });
+    });
+</script>
 {% endblock %}

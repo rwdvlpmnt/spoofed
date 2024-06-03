@@ -12,12 +12,12 @@ urlpatterns = [
     path('google-login/', views.google_login, name='google_login'),  # Adjust the URL and view name as per your implementation
     path('oauth/google/', views.google_oauth_view, name='google_oauth_url'),# Other URL patterns
     path('features/', views.features, name='features'),
+    path('facebook-login/', views.facebook_login, name='facebook_login'),
     path('pricing/', views.pricing, name='pricing'),
-  # path('keypad/', views.keypad, name='keypad'),
     path('contact/', views.contact, name='contact'),
     path('registration/login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('phone-input/', views.phone_input, name='phone_input'),
     path('process-phone-numbers/', views.process_phone_numbers, name='process_phone_numbers'),
     path('navigation/', views.navigation, name='navigation'),
-                                    #...
+    path('accounts/', include('allauth.urls')),                               #...
     ]

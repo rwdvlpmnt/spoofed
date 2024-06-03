@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
 
 def login(request):
@@ -49,3 +50,6 @@ def process_phone_numbers(request):
 def navigation(request):
     return render(request, 'navigation.html')
 
+def facebook_login(request):
+    # Your logic for Facebook login
+    return HttpResponse("Facebook login view")
