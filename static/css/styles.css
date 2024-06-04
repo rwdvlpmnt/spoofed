@@ -38,7 +38,7 @@ header {
 }
 
 .header-right .menu-icon .icon {
-    font-size: 50px; /* Adjust the size of the menu icon */
+    font-size: 80px; /* Adjust the size of the menu icon */
     color: #5AA9E6; /* Powder blue */
     height: 100px; /* Match the height of the logo */
     line-height: 95px; /* Vertically center the icon */
@@ -532,7 +532,7 @@ footer {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: revolve 1s ease-in-out;
+    animation: revolve 3s ease-in-out;
 }
 
 .feature-block h3 {
