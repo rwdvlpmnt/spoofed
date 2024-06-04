@@ -106,6 +106,7 @@ header {
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400; /* Specifies normal weight */
+    color:rebeccapurple
 }
 
 footer {
@@ -167,8 +168,6 @@ footer {
 .phone-input-section .btn:hover {
     background-color: #4A91C8;
 }
-
-/* Accordion styles */
 
 
 /* Pricing Section */
@@ -416,7 +415,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 100vh;
 }
 
 .register-section .container, .login-section .container {
@@ -705,7 +704,7 @@ footer {
     margin: 20px 0;
     border: 1px solid #ddd;
     border-radius: 10px;
-    transition: transform 1s ease-in-out;
+    transition: transform 3s ease-in-out;
 }
 
 .feature-block.rotate {
