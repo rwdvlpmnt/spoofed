@@ -9,44 +9,48 @@
     <title>{% block title %}SPOOFED!{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
 </head>
 
 <body>
     <header>
         <div class="container header-content">
             <div class="header-left">
-                <a href="/" class="logo"><img src="{% static 'images/FullLogo_Transparent_NoBuffer.png' %}" alt="Logo"></a>
-            </div>
-        <div class="header-right">
-            <div class="menu-icon">
-                <a href="{% url 'navigation' %}">
-                    <i class="fas fa-bars"></i>
+                <a href="/" class="logo">
+                    <img src="{% static 'images/FullLogo_Transparent_NoBuffer.png' %}" alt="Logo">
                 </a>
-               <!--<a href="javascript:void(0);" class="icon" onclick="toggleNav()">-->
-                   <!--<i class="fas fa-bars"></i>-->
-               <!--</a>-->
             </div>
-            <nav>
-                <ul class="main-nav" id="nav-menu">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'features' %}">Features</a></li>
-                    <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                    <li><a href="{% url 'phone_input' %}">Spoof Call</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                </ul>
-            </nav>
-        </div>
+            <div class="header-right">
+                <div class="menu-icon">
+                    <a href="{% url 'navigation' %}">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                    <!--<a href="javascript:void(0);" class="icon" onclick="toggleNav()">-->
+                    <!--<i class="fas fa-bars"></i>-->
+                    <!--</a>-->
+                </div>
+                <nav>
+                    <ul class="main-nav" id="nav-menu">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'features' %}">Features</a></li>
+                        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                        <li><a href="{% url 'phone_input' %}">Spoof Call</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-<main>
-    {% block content %}{% endblock %}
-</main>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
     <footer>
         <p>&copy; 2024 Spoofed Solutions. All rights reserved.</p>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script> 
+    <script src="{% static 'js/script.js' %}"></script>
     <script>
         function toggleNav() {
             var nav = document.getElementById("nav-menu");
