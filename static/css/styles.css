@@ -38,7 +38,7 @@ header {
 }
 
 .header-right .menu-icon .icon {
-    font-size: 80px; /* Adjust the size of the menu icon */
+    font-size: 100px; /* Adjust the size of the menu icon */
     color: #5AA9E6; /* Powder blue */
     height: 100px; /* Match the height of the logo */
     line-height: 95px; /* Vertically center the icon */
@@ -127,7 +127,7 @@ footer {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-    background-color: #86c1ef;
+    background-color: #cbe4f7;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -189,7 +189,7 @@ footer {
 }
 
 .pricing-plan {
-    background-color: #86c1ef;
+    background-color: #cbe4f7;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -202,7 +202,7 @@ footer {
 
 .pricing-plan h3 {
     margin-top: 0;
-    color: #333;
+    color: #5aa9e6;
 }
 
 .pricing-plan p {
@@ -294,7 +294,7 @@ footer {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-    background-color: #86c1ef;
+    background-color: #cbe4f7;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -422,7 +422,7 @@ footer {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-    background-color: #86c1ef;
+    background-color: #cbe4f7;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -511,7 +511,7 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #86c1ef;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -520,10 +520,10 @@ footer {
 .feature-block {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #86c1ef;
+    background-color: #cbe4f7;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: revolve 3s ease-in-out;
+    animation: revolve 2s ease-in-out;
 }
 
 .feature-block h3 {
