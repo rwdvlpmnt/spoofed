@@ -8,30 +8,53 @@
 <section class="features-section">
     <div class="container">
         <h2>Features</h2>
-        <div class="feature">
-            <h3>Caller ID Spoofing</h3>
-            <p>Impersonate any phone number when making calls. Perfect for maintaining privacy or playing harmless
-                pranks.</p>
+        <div class="feature-block" id="feature0">
+            <h3>Protect Your Privacy</h3>
+            <p>Spoof Solutions makes it easy to use a second phone number while ensuring your personal information is private and secure. Instantly get a virtual phone number to call and text from or add additional numbers you own (like an office line!) so you can call from that number using your personal device, regardless of where you are.</p>
         </div>
-        <div class="feature">
-            <h3>Voice Changer</h3>
-            <p>Transform your voice during calls. Sound like a different person, whether it's for fun or professional
-                reasons.</p>
+        <div class="feature-block" id="feature1">
+            <h3>Control Your Voice</h3>
+            <p>Spoof Solutions is the world's first real-time voice changer. Before placing a phone call, Spoof Solutions gives you the option to tailor the call by changing your voice to sound like a man or a woman and by adding background sounds.Transform your voice during calls. Sound like a different person, whether it's for fun or professional reasons.</p>
         </div>
-        <div class="feature">
+        <div class="feature-block" id="feature2">
             <h3>Call Recording</h3>
-            <p>Record both incoming and outgoing calls. Useful for legal purposes, interviews, or simply capturing
-                important conversations.</p>
+            <p>Record both incoming and outgoing calls. Useful for legal purposes, interviews, or simply capturing important conversations. Sometimes recording your phone calls is necessary to keep people honest and accountable or to get the protection you need. Spoof Solutions allows you to easily record your phone calls and instantly download them once the call is complete.</p>
         </div>
-        <div class="feature">
-            <h3>Call Forwarding</h3>
-            <p>Redirect incoming calls to any number you choose. Stay connected even when you're on the move.</p>
+        <div class="feature-block" id="feature3">
+            <h3>Call Forwarding or Straight To Voicemail</h3>
+            <p>Redirect incoming calls to any number you choose. Stay connected even when you're on the move. Calls placed through your virtual phone number on Spoof Solutions can instantly be sent to a person's voicemail. This
+            allows you to control your day and save time when you need to avoid conversation. Their phone will show a missed call,
+            and you can easily leave a voicemail.</p>
         </div>
-        <div class="feature">
+        <div class="feature-block" id="feature4">
             <h3>Text Messaging</h3>
-            <p>Send and receive text messages using any phone number. Keep your communication versatile and efficient.
+            <p>Send and receive text messages using any phone number. Keep your communication versatile and efficient. In addition to calling, you can also send text messages through a second phone number of your choosing. Simply select from our list of virtual numbers and get the conversation started! Our texting feature is easy to use, accessible from anywhere, and 100% secure. All responses are FREE and once you're done with the conversation, simply delete the message and you won't receive any more replies!
             </p>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const options = {
+            threshold: 0.5
+        };
+
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('rotate');
+                } else {
+                    entry.target.classList.remove('rotate');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, options);
+
+        document.querySelectorAll('.feature-block').forEach(block => {
+            observer.observe(block);
+        });
+    });
+</script>
 {% endblock %}
