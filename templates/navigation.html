@@ -5,7 +5,7 @@ Navigation
 {% endblock %}
 
 {% block content %}
-<section class="navigation-section">
+<!-- <section class="navigation-section">
     <div class="container">
         <nav class="main-nav">
             <ul class="nav-menu" id="nav-menu">
@@ -17,15 +17,16 @@ Navigation
             </ul>
         </nav>
     </div>
-</section>
+</section> -->
 
 <section class="nav-section">
     <div class="container">
+        <a href="{% url 'home' %}">
         <div class="feature-block" id="feature1">
-        <a href="{% url 'home' %}"></a> 
         <h2>Home</h2>
         <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
         </div>
+        </a>
 
     <div class="feature-block" id="feature2">
         <a href="{% url 'features' %}">
