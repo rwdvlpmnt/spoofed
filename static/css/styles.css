@@ -848,12 +848,12 @@ footer {
   background-color: #45a049;
 }
 
-body {
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f8ff; /* Light blue background */
+    background-color: #f0f8ff; /* Light blue background
     margin: 0;
 }
 
@@ -902,3 +902,4 @@ body {
         transform: rotateZ(360deg);
     }
 }
+ */
