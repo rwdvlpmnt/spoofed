@@ -26,7 +26,7 @@
 
   <!-- Sign in with Google -->
   <div class="google-signin">
-    <a href="{% url 'google_login' %}" class="btn btn-google"></a><!--Sign in with Google-->
+    <a href="{% url 'google_login' %}" class="btn btn-google">Sign in with Google</a>
   </div>
   <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default"
     data-auto-logout-link="false" data-use-continue-as="false"></div>
@@ -36,11 +36,17 @@
   <!-- Share links -->
   <div class="share-buttons-container">
     <div class="share-buttons">
-      <button class="share-button" onclick="shareFacebook()">Share on Facebook</button>
-      <button class="share-button" onclick="shareTwitter()">Share on Twitter</button>
-      <button class="share-button" onclick="shareLinkedIn()">Share on LinkedIn</button>
+      <button class="share-button" onclick="shareFacebook()">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+      <button class="share-button" onclick="shareTwitter()">
+        <i class="fab fa-twitter"></i>
+      </button>
+      <button class="share-button" onclick="shareLinkedIn()">
+        <i class="fab fa-linkedin-in"></i>
+      </button>
     </div>
-  </div>
+  </div
   
   <script src="{% static 'js/float-share-links.js' %}"></script>
   

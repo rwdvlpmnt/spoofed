@@ -120,12 +120,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 100vh;
 }
 
 .phone-input-section .container {
-    max-width: 400px;
-    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
     padding: 20px;
     background-color: #cbe4f7;
     border-radius: 8px;
@@ -282,16 +282,16 @@ footer {
 }
 
 /* Login Section */
-.login-section {
+.login-section, .register-section{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 75vh;
+    min-height: 100vh;
     padding: 20px;
 }
 
-.login-section .container {
-    max-width: 400px;
+.login-section .container, .register-section .container{
+    max-width: 768px;
     width: 100%;
     padding: 20px;
     background-color: #cbe4f7;
@@ -299,21 +299,21 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.login-section h2 {
+.login-section h2, .register-section h2{
     text-align: center;
     margin-bottom: 20px;
 }
 
-.login-section .form-group {
+.login-section .form-group, .register-section .form-group{
     margin-bottom: 15px;
 }
 
-.login-section .form-group label {
+.login-section .form-group label, .register-section .form-group label{
     display: block;
     margin-bottom: 5px;
 }
 
-.login-section .form-group input {
+.login-section .form-group input, .register-section .form-group input{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -321,7 +321,7 @@ footer {
     box-sizing: border-box;
 }
 
-.login-section .btn {
+.login-section .btn, .register-section .btn{
     width: 100%;
     padding: 10px;
     background-color: #5AA9E6;
@@ -332,21 +332,21 @@ footer {
     font-size: 16px;
 }
 
-.login-section .btn:hover {
+.login-section .btn:hover, .register-section .btn:hover{
     background-color: #4A91C8;
 }
 
-.login-section p {
+.login-section p, .register-section p{
     text-align: center;
     margin: 10px 0;
 }
 
-.login-section a {
+.login-section a, .register-section a{
     color: #5AA9E6;
     text-decoration: none;
 }
 
-.login-section a:hover {
+.login-section a:hover, .register-section a:hover{
     text-decoration: underline;
 }
 
@@ -397,7 +397,7 @@ footer {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    .login-section .container {
+    .register-section .container, .login-section .container {
         padding: 10px;
     }
 
@@ -419,8 +419,8 @@ footer {
 }
 
 .register-section .container, .login-section .container {
-    max-width: 400px;
-    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
     padding: 20px;
     background-color: #cbe4f7;
     border-radius: 8px;
@@ -823,9 +823,9 @@ footer {
 
 .share-buttons-container {
   position: fixed;
-  top: 50%;
+  top: 30%;
   right: 20px;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
   z-index: 1000;
   display: none; /* Hide by default */
 }
@@ -837,69 +837,17 @@ footer {
 }
 
 .share-button {
-  background-color: #4CAF50;
+  background-color: #5AA9E6;
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
+  font-size: 20px; /* Adjust font size for icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .share-button:hover {
-  background-color: #45a049;
+  background-color: #5AA9E6;
 }
-
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f8ff; /* Light blue background
-    margin: 0;
-}
-
-.globe-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-}
-
-.wireframe-globe {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid powderblue;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: rotateGlobe 10s linear infinite;
-}
-
-.wireframe-globe::before,
-.wireframe-globe::after {
-    content: '';
-    position: absolute;
-    border: 2px solid powderblue;
-    border-radius: 50%;
-}
-
-.wireframe-globe::before {
-    width: 100%;
-    height: 100%;
-    transform: rotateX(90deg);
-}
-
-.wireframe-globe::after {
-    width: 100%;
-    height: 100%;
-    transform: rotateY(90deg);
-}
-
-@keyframes rotateGlobe {
-    from {
-        transform: rotateZ(0deg);
-    }
-    to {
-        transform: rotateZ(360deg);
-    }
-}
- */
