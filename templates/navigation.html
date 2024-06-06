@@ -19,36 +19,34 @@ Navigation
     </div>
 </section>
 
-<section class="home-section">
+<section class="nav-section">
     <div class="container">
+        <div class="feature-block" id="feature1">
+        <a href="{% url 'home' %}"></a> 
         <h2>Home</h2>
         <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
-    </div>
-</section>
+        </div>
 
-<section class="features-section">
-    <div class="container">
+    <div class="feature-block" id="feature2">
+        <a href="{% url 'features' %}">
         <h2>Features</h2>
         <p>Discover the amazing features of Spoofed Solutions that help you spoof calls easily and securely.</p>
     </div>
-</section>
 
-<section class="spoof-call-section">
-    <div class="container">
+    <div class="feature-block" id="feature3">
+        <a href="{% url 'phone_input' %}">
         <h2>Spoof Call</h2>
         <p>Enter your phone number to start making spoofed calls with our service.</p>
     </div>
-</section>
 
-<section class="pricing-section">
-    <div class="container">
+    <div class="feature-block" id="feature4">
+    <a href="{% url 'pricing' %}">
         <h2>Pricing</h2>
         <p>Check out our pricing plans and choose the one that best fits your needs.</p>
     </div>
-</section>
 
-<section class="login-section">
-    <div class="container">
+    <div class="feature-block" id="feature5">
+        <a href="{% url 'login' %}"></a>
         <h2>Login</h2>
         <p>Login to your account to access all features and manage your spoofed calls.</p>
     </div>
@@ -63,10 +61,34 @@ Navigation
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const menuIcon = document.querySelector('.menu-icon');
-        const navMenu = document.querySelector('.header-right nav ul');
+        const navMenu = document.querySelector('.nav-menu'); //.header-right nav ul');
 
         menuIcon.addEventListener('click', function () {
             navMenu.classList.toggle('show-menu');
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const options = {
+            threshold: 0.5
+        };
+
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('rotate');
+                } else {
+                    entry.target.classList.remove('rotate');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, options);
+
+        document.querySelectorAll('.nav-section').forEach(block => {
+            observer.observe(block);
         });
     });
 </script>

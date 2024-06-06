@@ -500,14 +500,14 @@ footer {
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 768px) {''
     .register-section .container, .login-section .container {
         padding: 10px;
     }
 }
 
 /* Container styles */
-.home-section .container, .features-section .container{
+.home-section .container, .features-section .container, .nav-section .container{
     max-width: 768px;
     margin: 0 auto;
     padding: 20px;
@@ -549,7 +549,7 @@ footer {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    .home-section .container, .features-section .container{
+    .home-section .container, .features-section .container, .nav-section .container{
         padding: 10px;
     }
 
@@ -704,18 +704,18 @@ footer {
 }
 
 /* General styles */
-.home-section .container, .features-section .container{
+.home-section .container, .features-section .container, .nav-section .container{
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.home-section h2, .features-section h2{
+.home-section h2, .features-section h2, .nav-section h2{
     text-align: center;
     margin-bottom: 20px;
 }
 
-.home-section p, .features-section p{
+.home-section p, .features-section p, .nav-section p{
     text-align: justify;
 }
 
