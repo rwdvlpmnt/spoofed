@@ -500,7 +500,7 @@ footer {
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {''
+@media (max-width: 768px) {
     .register-section .container, .login-section .container {
         padding: 10px;
     }
@@ -820,3 +820,31 @@ footer {
     display: block;
     margin: 5px 0;
 }
+
+.share-buttons-container {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: none; /* Hide by default */
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.share-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.share-button:hover {
+  background-color: #45a049;
+}
+

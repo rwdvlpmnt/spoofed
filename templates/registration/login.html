@@ -10,7 +10,7 @@
     <form action="{% url 'login' %}" method="post">
       {% csrf_token %}
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="username">Username/Email</label>
         <input type="text" id="username" name="username" required>
       </div>
       <div class="form-group">
@@ -22,52 +22,24 @@
     <p>Don't have an account? <a href="{% url 'register' %}">Sign up here</a>.</p>
     <p>Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.</p>
 
-    <!-- Share links -->
-    <div class="share-buttons">
-      <button class="share-button" onclick="shareFacebook()">Share on Facebook</button>
-      <button class="share-button" onclick="shareTwitter()">Share on Twitter</button>
-      <button class="share-button" onclick="shareLinkedIn()">Share on LinkedIn</button>
-    </div>
-
     <!-- Sign in with Google -->
     <div class="google-signin">
-      <a href="{% url 'google_login' %}" class="btn btn-google">Sign in with Google</a>
+      <a href="{% url 'google_login' %}" class="btn btn-google"></a><!--Sign in with Google-->
     </div>
     <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default"
       data-auto-logout-link="false" data-use-continue-as="false"></div>
   </div>
 </section>
 
-<script>
-  function shareFacebook() {
-    window.open('https://www.facebook.com/sharer/sharer.php?u=https://example.com', '_blank');
-  }
+<!-- Share links -->
+<div class="share-buttons-container">
+  <div class="share-buttons">
+    <button class="share-button" onclick="shareFacebook()">Share on Facebook</button>
+    <button class="share-button" onclick="shareTwitter()">Share on Twitter</button>
+    <button class="share-button" onclick="shareLinkedIn()">Share on LinkedIn</button>
+  </div>
+</div>
 
-  function shareTwitter() {
-    window.open('https://twitter.com/intent/tweet?url=https://example.com', '_blank');
-  }
-
-  function shareLinkedIn() {
-    window.open('https://www.linkedin.com/shareArticle?url=https://example.com', '_blank');
-  }
-
-  // Facebook SDK initialization
-  window.fbAsyncInit = function () {
-    FB.init({
-      appId: 'your-app-id', // Replace 'your-app-id' with your actual Facebook App ID
-      cookie: true,
-      xfbml: true,
-      version: 'v11.0'
-    });
-  };
-
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) { return; }
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
+<script src="{% static 'js/float-share-links.js' %}"></script>
 
 {% endblock %}

@@ -5,53 +5,60 @@ Navigation
 {% endblock %}
 
 {% block content %}
-<!-- <section class="navigation-section">
-    <div class="container">
-        <nav class="main-nav">
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'features' %}">Features</a></li>
-                <li><a href="{% url 'phone_input' %}">Spoof Call</a></li>
-                <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
-            </ul>
-        </nav>
-    </div>
-</section> -->
 
 <section class="nav-section">
     <div class="container">
         <a href="{% url 'home' %}">
-        <div class="feature-block" id="feature1">
-        <h2>Home</h2>
-        <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
-        </div>
+            <div class="feature-block" id="feature1">
+                <h2>Home</h2>
+                <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
+            </div>
         </a>
 
-    <div class="feature-block" id="feature2">
         <a href="{% url 'features' %}">
-        <h2>Features</h2>
-        <p>Discover the amazing features of Spoofed Solutions that help you spoof calls easily and securely.</p>
-    </div>
+            <div class="feature-block" id="feature2">
+                <h2>Features</h2>
+                <p>Discover the amazing features of Spoofed Solutions that help you spoof calls easily and securely.</p>
+            </div>
+        </a>
 
-    <div class="feature-block" id="feature3">
         <a href="{% url 'phone_input' %}">
-        <h2>Spoof Call</h2>
-        <p>Enter your phone number to start making spoofed calls with our service.</p>
-    </div>
+            <div class="feature-block" id="feature3">
+                <h2>Spoof Call</h2>
+                <p>Enter your phone number to start making spoofed calls with our service.</p>
+            </div>
+        </a>
 
-    <div class="feature-block" id="feature4">
-    <a href="{% url 'pricing' %}">
-        <h2>Pricing</h2>
-        <p>Check out our pricing plans and choose the one that best fits your needs.</p>
-    </div>
+        <a href="{% url 'pricing' %}">
+            <div class="feature-block" id="feature4">
+                <h2>Pricing</h2>
+                <p>Check out our pricing plans and choose the one that best fits your needs.</p>
+            </div>
+        </a>
 
-    <div class="feature-block" id="feature5">
-        <a href="{% url 'login' %}"></a>
-        <h2>Login</h2>
-        <p>Login to your account to access all features and manage your spoofed calls.</p>
+        <a href="{% url 'login' %}">
+            <div class="feature-block" id="feature5">
+                <h2>Login</h2>
+                <p>Login to your account to access all features and manage your spoofed calls.</p>
+            </div>
+        </a>
     </div>
 </section>
+
+<style>
+    .nav-section a {
+        text-decoration: none;
+        /* Remove underline from links */
+    }
+
+    .feature-block {
+        /* Add your desired styles for the feature blocks */
+    }
+
+    .nav-section a:hover .feature-block {
+        /* Optionally add hover effect styles */
+    }
+</style>
 
 <script>
     document.getElementById('nav-toggle').addEventListener('click', function () {
