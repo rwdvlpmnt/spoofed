@@ -8,17 +8,12 @@ Phone Input
 <section class="phone-input-section">
     <div class="container">
         <h2>Phone Number Input</h2>
-        <form action="{% url 'process_phone_numbers' %}" method="post">
+        <form id="phoneForm">
             {% csrf_token %}
             <div class="form-group">
                 <label for="number_to_call">Number to Call:</label>
                 <input type="tel" id="number_to_call" name="number_to_call" class="phone-input"
                     placeholder="Enter number to call" required>
-            </div>
-            <div class="form-group">
-                <label for="number_calling_from">Number Calling From:</label>
-                <input type="tel" id="number_calling_from" name="number_calling_from" class="phone-input"
-                    placeholder="Enter number calling from" required>
             </div>
             <div class="form-group">
                 <label for="my_number">My Number:</label>
@@ -27,6 +22,9 @@ Phone Input
             </div>
             <button type="submit" class="btn">Submit</button>
         </form>
+        <audio id="remoteAudio" autoplay></audio>
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sip.js/0.20.0/sip.min.js"></script>
+<script src="{% static 'js/softphone.js' %}"></script>
 {% endblock %}
