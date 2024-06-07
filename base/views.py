@@ -50,6 +50,15 @@ def process_phone_numbers(request):
 def navigation(request):
     return render(request, 'navigation.html')
 
+def terms(request):
+    return render(request, 'terms.html')
+
+def faq(request):
+    return render(request, 'faq.html')
+
+def blog(request):
+    return render(request, 'blog.html')
+
 def facebook_login(request):
     # Your logic for Facebook login
     return HttpResponse("Facebook login view")

@@ -19,5 +19,7 @@ urlpatterns = [
     path('phone-input/', views.phone_input, name='phone_input'),
     path('process-phone-numbers/', views.process_phone_numbers, name='process_phone_numbers'),
     path('navigation/', views.navigation, name='navigation'),
-    path('accounts/', include('allauth.urls')),                               #...
+    path('accounts/', include('allauth.urls')),
+    path('terms/', views.terms, name='terms'),
+    path('blog/', views.blog, name='blog'),                                                                                                                            #...
     ]
