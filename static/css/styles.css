@@ -42,6 +42,7 @@ header {
     color: #5AA9E6; /* Powder blue */
     height: 100px; /* Match the height of the logo */
     line-height: 95px; /* Vertically center the icon */
+    width: auto
 }
 
 .header-right nav {
@@ -127,7 +128,7 @@ footer {
     max-width: 768px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #cbe4f7;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -719,7 +720,7 @@ footer {
     text-align: justify;
 }
 
-/* Mobile styles for slide-in menu */
+/* Mobile styles for slide-in menu
 @media (max-width: 768px) {
     .header-right nav {
         display: none;
@@ -732,7 +733,7 @@ footer {
         position: fixed;
         top: 0;
         right: -250px;
-        background-color: #FFFFFF; /* White background */
+        background-color: #FFFFFF; /* White background
         width: 250px;
         height: 100%;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -745,7 +746,7 @@ footer {
         text-align: center;
         margin: 0;
         padding: 15px 0;
-        border-bottom: 1px solid #ddd; /* Optional: Add a border between menu items */
+        border-bottom: 1px solid #ddd; /* Optional: Add a border between menu items
     }
     .header-right nav ul li a {
         padding: 10px;
@@ -755,7 +756,7 @@ footer {
     .header-right nav ul.show-menu {
         right: 0;
     }
-}
+} */
 
 /* Navigation styles */
 .navigation-section {
@@ -823,9 +824,9 @@ footer {
 
 .share-buttons-container {
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 20px;
-  transform: translateY(-30%);
+  transform: translateY(-15%);
   z-index: 1000;
   display: none; /* Hide by default */
 }
@@ -833,7 +834,7 @@ footer {
 .share-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .share-button {
