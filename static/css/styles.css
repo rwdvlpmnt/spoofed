@@ -156,17 +156,17 @@ footer {
     background-color: #4A91C8;
 }
 
-.login-section p, .register-section p {
+.phone-input-section p, .login-section p, .register-section p {
     text-align: center;
     margin: 10px 0;
 }
 
-.login-section a, .register-section a {
+.phone-input-section a, .login-section a, .register-section a {
     color: #5AA9E6;
     text-decoration: none;
 }
 
-.login-section a:hover, .register-section a:hover {
+.phone-input-section a:hover, .login-section a:hover, .register-section a:hover {
     text-decoration: underline;
 }
 
@@ -246,9 +246,6 @@ footer {
     .pricing-plan {
         flex: 1 1 100%;
         max-width: 100%;
-    }
-    .home-section .container {
-        padding: 0 10px;
     }
 }
 
