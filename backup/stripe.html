@@ -1,3 +1,5 @@
+<!-- myapp/templates/purchase_with_stripe.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +16,5 @@
         {% csrf_token %}
         <button id="checkout-button" type="submit">Pay with Stripe</button>
     </form>
-</body>
-
-</html>
+    <script>
+        var stripe = Stripe

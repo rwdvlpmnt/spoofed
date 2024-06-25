@@ -1,5 +1,4 @@
-/* Ensure that this file contains the consistent styles for all the new pages */
-
+/* Common styles */
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -16,7 +15,7 @@ body {
     flex-wrap: wrap;
 }
 
-header, .login-section, .communicate-section, .pricing-section, .profile-section, .register-section, .nav-section, .features-section, .home-section .container {
+header, .nav-section, .features-section, .home-section .container {
     background-color: #FFFFFF;
     padding: 10px 0;
     width: 100%;
@@ -34,8 +33,6 @@ header, .login-section, .communicate-section, .pricing-section, .profile-section
 }
 
 .header-right .menu-icon {
-    height: 100px;
-    width: auto;
     display: none;
     cursor: pointer;
 }
@@ -108,7 +105,7 @@ footer {
 }
 
 /* Sections */
-.communicate-section, .login-section, .register-section {
+.phone-input-section, .login-section, .register-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,27 +113,27 @@ footer {
     padding: 20px;
 }
 
-.communicate-section .container, .login-section .container, .register-section .container {
+.phone-input-section .container, .login-section .container, .register-section .container {
     background-color: #cbe4f7;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.communicate-section h2, .login-section h2, .register-section h2 {
+.phone-input-section h2, .login-section h2, .register-section h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.communicate-section .form-group, .login-section .form-group, .register-section .form-group {
+.phone-input-section .form-group, .login-section .form-group, .register-section .form-group {
     margin-bottom: 15px;
 }
 
-.communicate-section .form-group label, .login-section .form-group label, .register-section .form-group label {
+.phone-input-section .form-group label, .login-section .form-group label, .register-section .form-group label {
     display: block;
     margin-bottom: 5px;
 }
 
-.communicate-section .form-group input, .login-section .form-group input, .register-section .form-group input {
+.phone-input-section .form-group input, .login-section .form-group input, .register-section .form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -144,7 +141,7 @@ footer {
     box-sizing: border-box;
 }
 
-.communicate-section .btn, .login-section .btn, .register-section .btn {
+.phone-input-section .btn, .login-section .btn, .register-section .btn {
     width: 100%;
     padding: 10px;
     background-color: #5AA9E6;
@@ -155,21 +152,21 @@ footer {
     font-size: 16px;
 }
 
-.communicate-section .btn:hover, .login-section .btn:hover, .register-section .btn:hover {
+.phone-input-section .btn:hover, .login-section .btn:hover, .register-section .btn:hover {
     background-color: #4A91C8;
 }
 
-.communicate-section p, .login-section p, .register-section p {
+.phone-input-section p, .login-section p, .register-section p {
     text-align: center;
     margin: 10px 0;
 }
 
-.communicate-section a, .login-section a, .register-section a {
+.phone-input-section a, .login-section a, .register-section a {
     color: #5AA9E6;
     text-decoration: none;
 }
 
-.communicate-section a:hover, .login-section a:hover, .register-section a:hover {
+.phone-input-section a:hover, .login-section a:hover, .register-section a:hover {
     text-decoration: underline;
 }
 

@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Ensure charset is within the head -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure viewport is within the head -->
     <title>{% block title %}SPOOFED!{% endblock %}</title>
     <link rel="icon" href="{% static 'images/favicon-16x16.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -17,13 +17,13 @@
     <header>
         <div class="container header-content">
             <div class="header-left">
-                <a href="/" class="logo">
+                <a href="/" class="logo" title="Home">
                     <img src="{% static 'images/FullLogo_Transparent_NoBuffer.png' %}" alt="Logo">
                 </a>
             </div>
             <div class="header-right">
                 <div class="menu-icon">
-                    <a href="{% url 'navigation' %}">
+                    <a href="{% url 'navigation' %}" title="Navigation Menu">
                         <i class="fas fa-bars"></i>
                     </a>
                 </div>
@@ -32,8 +32,11 @@
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'features' %}">Features</a></li>
                         <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                        <li><a href="{% url 'phone_input' %}">Spoof Call</a></li>
+                        <li><a href="{% url 'communicate' %}">Spoof Call</a></li>
                         <li><a href="{% url 'login' %}">Login</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}" class="logout-btn">Logout</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
@@ -51,16 +54,26 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script>
-        function toggleNav() {
-            var nav = document.getElementById("nav-menu");
-            if (nav.className === "main-nav") {
-                nav.className += " responsive";
-            } else {
-                nav.className = "main-nav";
-            }
-        }
-    </script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '3706290656326007',
+                cookie: true,
+                xfbml: true,
+                version: 'v20.0'
+            });
 
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 
 </html>
