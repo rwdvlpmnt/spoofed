@@ -7,37 +7,65 @@
 {% block content %}
 <section class="pricing-section">
     <div class="container">
-        <h2>Pricing</h2>
-        <div class="pricing-plans">
-            <div class="pricing-plan">
-                <h3>Basic</h3>
-                <p>$9.99</p>
-                <ul>
-                    <li>10 Minutes of Call Time</li>
-                    <li>Caller ID Spoofing</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-            </div>
-            <div class="pricing-plan">
-                <h3>Standard</h3>
-                <p>$19.99</p>
-                <ul>
-                    <li>25 Minutes of Call Time</li>
-                    <li>Caller ID Spoofing</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-            </div>
-            <div class="pricing-plan">
-                <h3>Premium</h3>
-                <p>$29.99</p>
-                <ul>
-                    <li>45 Minutes of Call Time</li>
-                    <li>Caller ID Spoofing</li>
-                    <li>Voice Changer</li>
-                    <li>Call Recording</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-            </div>
+        <h2>Our Packages</h2>
+        <div class="feature-block" id="feature1">
+            <h3>$9.95</h3>
+             <ul>
+                <li>30 Minutes of Call Time</li>
+            </ul>
+            <form action="{% url 'select_plan' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="price" value="9.95">
+                <button type="submit" class="btn">Choose Plan</button>
+            </form>
+        </div>
+
+        <div class="feature-block" id="feature2">
+            <h3>$19.95</h3>
+            <ul>
+                <li>60 Minutes of Call Time</li>
+            </ul>
+            <form action="{% url 'select_plan' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="price" value="19.95">
+                <button type="submit" class="btn">Choose Plan</button>
+            </form>
+        </div>
+
+        <div class="feature-block" id="feature3">
+            <h3>$29.95</h3>
+            <ul>
+                <li>100 Minutes of Call Time</li>
+            </ul>
+            <form action="{% url 'select_plan' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="price" value="29.95">
+                <button type="submit" class="btn">Choose Plan</button>
+            </form>
+        </div>
+
+        <div class="feature-block" id="feature4">
+            <h3>$49.95</h3>
+            <ul>
+                <li>200 Minutes of Call Time</li>
+            </ul>
+            <form action="{% url 'select_plan' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="price" value="49.95">
+                <button type="submit" class="btn">Choose Plan</button>
+            </form>
+        </div>
+
+        <div class="feature-block" id="feature5">
+            <h3>$99.95</h3>
+            <ul>
+                <li>400 Minutes of Call Time</li>
+            </ul>
+            <form action="{% url 'select_plan' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="price" value="99.95">
+                <button type="submit" class="btn">Choose Plan</button>
+            </form>
         </div>
     </div>
 </section>

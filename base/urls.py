@@ -23,4 +23,5 @@ urlpatterns = [
     path('purchase/', views.purchase_with_stripe, name='purchase_with_stripe'),
     path('accounts/', include('django.contrib.auth.urls')),  # Built-in auth URLs
     path('accounts/', include('allauth.urls')),  # Django Allauth URLs
+    path('select_plan/', views.select_plan, name='select_plan'),  # Add this line for the select_plan view
 ]

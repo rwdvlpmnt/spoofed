@@ -16,4 +16,24 @@
     </form>
 </body>
 
+<script>
+    var handler = StripeCheckout.configure({
+        // Your Stripe public key
+        key: 'pk_test_XXX',
+        token: function (token) {
+            // You can access the price variable here and use it to
+            // create a charge on your server
+        }
+    });
+
+    document.getElementById('checkout-button').addEventListener('click', function (e) {
+        handler.open({
+            name: 'Your Site Name',
+            description: 'Selected Plan',
+            amount: {{ price| floatformat: 2 | cut: "." |default: "0" }}00 // Convert price to cents
+        });
+    e.preventDefault();
+    });
+</script>
+
 </html>

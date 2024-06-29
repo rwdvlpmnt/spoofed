@@ -32,10 +32,15 @@
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'features' %}">Features</a></li>
                         <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                        <li><a href="{% url 'communicate' %}">Spoof Call</a></li>
                         <li><a href="{% url 'login' %}">Login</a></li>
                         {% if user.is_authenticated %}
-                        <li><a href="{% url 'logout' %}" class="logout-btn">Logout</a></li>
+                        <li><a href="{% url 'communicate' %}">Spoof Call</a></li>
+                        <li>
+                            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-link-style">Logout</button>
+                            </form>
+                        </li>
                         {% endif %}
                     </ul>
                 </nav>

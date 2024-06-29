@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Login{% endblock %}
 
 {% block content %}
@@ -22,4 +24,34 @@
         <p>Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.</p>
     </div>
 </section>
+
+<!-- Sign in with Google -->
+<div class="google-signin">
+    <a href="{% url 'google_login' %}" class="btn btn-google" title="Sign in with Google">Sign in with Google</a>
+</div>
+
+<!-- Sign in with Facebook -->
+<div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default"
+    data-auto-logout-link="false" data-use-continue-as="false" title="Sign in with Facebook">
+</div>
+</div>
+</section>
+
+<!-- Share links -->
+<div class="share-buttons-container">
+    <div class="share-buttons">
+        <button class="share-button" onclick="shareFacebook()" title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </button>
+        <button class="share-button" onclick="shareTwitter()" title="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+        </button>
+        <button class="share-button" onclick="shareLinkedIn()" title="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </button>
+    </div>
+</div>
+
+<script src="{% static 'js/float-share-links.js' %}"></script>
+
 {% endblock %}

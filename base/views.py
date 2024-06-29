@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+
 
 def home(request):
     return render(request, 'home.html')
@@ -78,3 +81,9 @@ def purchase_with_stripe(request):
         )
         return redirect(session.url, code=303)
     return render(request, 'stripe.html')
+
+@require_POST
+def select_plan(request):
+    price = request.POST.get('price')
+    # Prepare any additional data needed for Stripe
+    return render(request, 'stripe.html', {'price': price})
