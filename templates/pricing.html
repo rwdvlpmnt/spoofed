@@ -5,68 +5,78 @@
 {% block title %}Pricing{% endblock %}
 
 {% block content %}
+
 <section class="pricing-section">
     <div class="container">
         <h2>Our Packages</h2>
-        <div class="feature-block" id="feature1">
-            <h3>$9.95</h3>
-             <ul>
-                <li>30 Minutes of Call Time</li>
-            </ul>
-            <form action="{% url 'select_plan' %}" method="post">
+
+        <form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
+            <div class="feature-block" id="feature1" onclick="document.getElementById('selectPlanForm').submit();">
+                <h3>$9.95<br>30 Minutes of call time</h3>
+        
                 {% csrf_token %}
                 <input type="hidden" name="price" value="9.95">
-                <button type="submit" class="btn">Choose Plan</button>
-            </form>
-        </div>
 
-        <div class="feature-block" id="feature2">
-            <h3>$19.95</h3>
-            <ul>
-                <li>60 Minutes of Call Time</li>
-            </ul>
-            <form action="{% url 'select_plan' %}" method="post">
+            </div>
+        </form>
+
+
+<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
+    <div class="feature-block" id="feature2" onclick="document.getElementById('selectPlanForm').submit();">
+            <h3>$19.95<br>60 Minutes of Call Time</h3>
+           
                 {% csrf_token %}
                 <input type="hidden" name="price" value="19.95">
-                <button type="submit" class="btn">Choose Plan</button>
-            </form>
-        </div>
+                
+                </div>
+                </form>
 
-        <div class="feature-block" id="feature3">
-            <h3>$29.95</h3>
-            <ul>
-                <li>100 Minutes of Call Time</li>
-            </ul>
-            <form action="{% url 'select_plan' %}" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="price" value="29.95">
-                <button type="submit" class="btn">Choose Plan</button>
-            </form>
-        </div>
 
-        <div class="feature-block" id="feature4">
-            <h3>$49.95</h3>
-            <ul>
-                <li>200 Minutes of Call Time</li>
-            </ul>
-            <form action="{% url 'select_plan' %}" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="price" value="49.95">
-                <button type="submit" class="btn">Choose Plan</button>
-            </form>
-        </div>
+<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
+    <div class="feature-block" id="feature3" onclick="document.getElementById('selectPlanForm').submit();">
+            <h3>$29.95<br>100 Minutes of Call Time</h3>
+                            {% csrf_token %}
+                            <input type="hidden" name="price" value="29.95">
+                            
+                            </div>
+                            </form>
 
-        <div class="feature-block" id="feature5">
-            <h3>$99.95</h3>
-            <ul>
-                <li>400 Minutes of Call Time</li>
-            </ul>
-            <form action="{% url 'select_plan' %}" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="price" value="99.95">
-                <button type="submit" class="btn">Choose Plan</button>
-            </form>
-        </div>
-    </div>
+<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
+    <div class="feature-block" id="feature4" onclick="document.getElementById('selectPlanForm').submit();">
+            <h3>$49.95<br>200 Minutes of Call Time</h3>
+                                    {% csrf_token %}
+                                    <input type="hidden" name="price" value="49.95">
+                                    
+                                    </div>
+                                    </form>
+
+
+<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
+<div class="feature-block" id="feature5" onclick="document.getElementById('selectPlanForm').submit();">
+            <h3>$99.95<br>400 Minutes of Call Time</h3>
+                                        {% csrf_token %}
+                                        <input type="hidden" name="price" value="99.95">
+                                        
+                                        </div>
+                                        </form>
+
+</div>
 </section>
+<style>
+    @keyframes shake {
+        0% {transform: translateX(0);}
+        25% {transform: translateX(-5px);}
+        50% {transform: translateX(5px);}
+        75% {transform: translateX(-5px);}
+        100% {transform: translateX(0);}
+    }
+
+    .feature-block:hover {
+        animation: shake 0.5s;
+        /* Adjust time as needed */
+        cursor: pointer;
+        /* Optional: Changes the cursor on hover to indicate it's clickable */
+    }
+</style>
+
 {% endblock %}

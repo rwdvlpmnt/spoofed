@@ -9,18 +9,18 @@ body {
 .container {
     max-width: 768px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-header, .login-section, .communicate-section, .pricing-section, .profile-section, .register-section, .nav-section, .features-section, .home-section .container {
+/* header, .login-section, .communicate-section, .pricing-section, .profile-section, .register-section, .nav-section, .features-section, .home-section {
     background-color: #FFFFFF;
     padding: 10px 0;
     width: 100%;
-}
+} */
 
 /* Header and Navigation */
 .header-left, .header-right {
@@ -185,7 +185,7 @@ footer {
     justify-content: center;
 }
 
-.pricing-plans {
+/* .pricing-plans {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -202,8 +202,8 @@ footer {
     margin: 10px;
     text-align: left;
 }
-
-.pricing-plan h3 {
+ */
+/* .pricing-plan h3 {
     margin-top: 0;
     color: #5aa9e6;
 }
@@ -243,14 +243,14 @@ footer {
 
 .pricing-plan .btn:hover {
     background-color: #4A91C8;
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .pricing-plan {
         flex: 1 1 100%;
         max-width: 100%;
     }
-}
+} */
 
 /* Floating elements */
 .home-section {
@@ -363,7 +363,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .home-section .container, .features-section .container, .nav-section .container {
+    .home-section .container, .features-section .container, .nav-section .container, .login-section .container, .register-section .container, .communicate-section .container, .pricing-section .container {
         padding: 10px;
     }
     .feature-block {
