@@ -2,44 +2,51 @@
 
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Pricing{% endblock %}
 
 {% block content %}
 
 <section class="pricing-section">
     <div class="container">
-                    <form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
-                        {% csrf_token %}
+         <form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
+        {% csrf_token %}
+        
         <h2>Our Packages</h2>
 
         <div class="feature-block" id="feature1">
              <div onclick="submitForm('9.95')">
+                 <h3>$9.95 for 30 Credit</h3>
+                <input type="hidden" name="price" value="9.95">
+            </div>
+        </div>
 
-
-                    <h3>$9.95 for 30 Credit</h3>
-                    <input type="hidden" name="price" value="9.95">
-                </div>
-                </div>
-
-                <div class="feature-block" id="feature2" onclick="submitForm('19.95')">
-                    <h3>$19.95 for 60 Credits</h3>
-                    <input type="hidden" name="price" value="19.95">
-                </div>
-
-                <div class="feature-block" id="feature3" onclick="submitForm('29.95')">
-                    <h3>$29.95 for 100 Credits</h3>
-                    <input type="hidden" name="price" value="29.95">
-                </div>
-
-                <div class="feature-block" id="feature4" onclick="submitForm('49.95')">
-                    <h3>$49.95 for 200 Credits</h3>
-                    <input type="hidden" name="price" value="49.95">
-                </div>
-
-                <div class="feature-block" id="feature5" onclick="submitForm('99.95')">
+        <div class="feature-block" id="feature2"> 
+            <div onclick="submitForm('19.95')">
+                <h3>$19.95 for 60 Credits</h3>
+                <input type="hidden" name="price" value="19.95">
+            </div>
+        </div>
+        <div class="feature-block" id="feature3">
+           <div onclick="submitForm('29.95')">
+               <h3>$29.95 for 100 Credits</h3>
+                <input type="hidden" name="price" value="29.95">
+            </div>
+        </div>
+        <div class="feature-block" id="feature4"> 
+            <div onclick="submitForm('49.95')">
+                <h3>$49.95 for 200 Credits</h3>
+                <input type="hidden" name="price" value="49.95">
+            </div>
+        </div>
+        <div class="feature-block" id="feature5">   
+            <div onclick="submitForm('99.95')">
                     <h3>$99.95 for 400 Credits</h3>
                     <input type="hidden" name="price" value="99.95">
                 </div>
+            </div>
+                </form>
             </form>
         </div>
     </div>

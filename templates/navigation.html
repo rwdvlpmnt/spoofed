@@ -16,57 +16,43 @@
                     </a>
                 </div>
 
-            <a href="{% url 'features' %}">
             <div class="feature-block" id="feature2">
+                <a href="{% url 'features' %}">
                 <h3>Features</h3>
                 <p>Discover the amazing features of Spoofed Solutions that help you spoof calls easily and securely.</p>
-        </div>
         </a>
+        </div>
 
-        <a href="{% url 'communicate' %}">
-            <div class="feature-block" id="feature3">
+        <div class="feature-block" id="feature3">
+        <a href="{% url 'communicate' %}">            
                 <h3>Spoof Call</h3>
                 <p>Enter your phone number to start making spoofed calls with our service.</p>
-            </div>
         </a>
+        </div>
 
+        <div class="feature-block" id="feature4">
         <a href="{% url 'pricing' %}">
-            <div class="feature-block" id="feature4">
                 <h3>Pricing</h3>
                 <p>Check out our pricing plans and choose the one that best fits your needs.</p>
-            </div>
         </a>
+        </div>
 
+        <div class="feature-block" id="feature5">
         <a href="{% url 'login' %}">
-            <div class="feature-block" id="feature5">
                 <h3>Login</h3>
                 <p>Login to your account to access all features and manage your spoofed calls.</p>
-            </div>
         </a>
+        </div>
     </div>
 </section>
 
 <style>
     @keyframes shake {
-        0% {
-            transform: translateX(0);
-        }
-
-        25% {
-            transform: translateX(-5px);
-        }
-
-        50% {
-            transform: translateX(5px);
-        }
-
-        75% {
-            transform: translateX(-5px);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
+        0% {transform: translateX(0);}
+        25% {transform: translateX(-5px);}
+        50% {transform: translateX(5px);}
+        75% {transform: translateX(-5px);}
+        100% {transform: translateX(0);}
     }
 
     .feature-block:hover {

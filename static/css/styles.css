@@ -28,7 +28,7 @@ body {
 }
 
 .header-right .menu-icon {
-    height: 75px;
+    height: 100px;
     width: auto;
     display: none;
     cursor: pointer;
@@ -103,6 +103,14 @@ footer {
 
 /* Sections */
 
+.communicate-section .container, .login-section .container, .register-section .container, .logout-section .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
 .communicate-section .form-group, .login-section .form-group, .register-section .form-group, .logout-section .form-group{
     margin-bottom: 15px;
 }
@@ -149,24 +157,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Pricing Section */
-/* .pricing-section {
-    padding: 20px 0;
-    text-align: center;
-}
-
-.pricing-section .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
-
 /* Floating elements */
-.home-section {
-    position: relative;
-    overflow: hidden;
-}
-
 .float-element {
     position: absolute;
     background-color: rgba(90, 169, 230, 0.1);
@@ -218,27 +209,6 @@ footer {
 
 .share-button:hover {
     background-color: #4A91C8;
-}
-
-/* Google Sign-in */
-.google-signin {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.google-signin .btn-google {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #DB4437;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.google-signin .btn-google:hover {
-    background-color: #c23321;
 }
 
 /* Feature block styles */

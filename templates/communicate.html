@@ -9,22 +9,33 @@
 {% block content %}
 <section class="communicate-section">
 <div class="container">
-    <h2>Make Calls</h2>
-            <div class="feature-block" id="feature1"> 
+    <h2>Spoof Calls</h2>
+            <div class="feature-block" id="feature1">
+                <h3>Call Options</h3>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="change_voice_to_man" name="change_voice_to_man">
+                    <label class="form-check-label" for="change_voice_to_man">Change Voice to Man</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="change_voice_to_woman" name="change_voice_to_woman">
+                    <label class="form-check-label" for="change_voice_to_woman">Change Voice to Woman</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="record_call" name="record_call"> 
     <p>Enter the number to call, the number the recipient see on there phone and last your phone number. Before you click the "MAKE CALL" button check out the options to change your voice to man or woman or record the call or both</p>
     <form id="phoneForm">
         {% csrf_token %}
         <div class="form-group">
             <label for="number_to_call" class="form-label">NUMBER TO CALL:</label>
-            <input type="tel" id="number_to_call" name="number_to_call" class="form-control" required>
+            <input type="tel" id="number_to_call" name="number_to_call" class="form-control" required title="Number to Call" placeholder="Enter the number to call">
         </div>
         <div class="form-group">
             <label for="my_number" class="form-label">MY NUMBER</label>
-            <input type="tel" id="my_number" name="my_number" class="form-control" required>
+            <input type="tel" id="my_number" name="my_number" class="form-control" required title="My Number" placeholder="Enter your phone number">
         </div>
         <div class="form-group">
             <label for="host_number" class="form-label">HOST NUMBER</label>
-            <input type="tel" id="host_number" name="host_number" class="form-control" required>
+            <input type="tel" id="host_number" name="host_number" class="form-control" required title="Host Number" placeholder="Enter the host number">
         </div>
         <button type="submit" class="btn btn-primary">Start Call</button>
     </form>
