@@ -1,3 +1,5 @@
+<!-- communicate.html -->
+
 {% extends 'base.html' %}
 
 {% load static %}
@@ -8,6 +10,7 @@
 <section class="communicate-section">
 <div class="container">
     <h2>Make Calls</h2>
+            <div class="feature-block" id="feature1"> 
     <p>Enter the number to call, the number the recipient see on there phone and last your phone number. Before you click the "MAKE CALL" button check out the options to change your voice to man or woman or record the call or both</p>
     <form id="phoneForm">
         {% csrf_token %}
@@ -26,6 +29,7 @@
         <button type="submit" class="btn btn-primary">Start Call</button>
     </form>
     <audio id="remoteAudio" autoplay></audio>
+</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sip.js/0.20.0/sip.min.js"></script>
 <script src="{% static 'js/softphone.js' %}"></script>

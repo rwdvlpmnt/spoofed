@@ -8,59 +8,41 @@
 
 <section class="pricing-section">
     <div class="container">
+                    <form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
+                        {% csrf_token %}
         <h2>Our Packages</h2>
 
-        <form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
-            <div class="feature-block" id="feature1" onclick="document.getElementById('selectPlanForm').submit();">
-                <h3>$9.95<br>30 Minutes of call time</h3>
-        
-                {% csrf_token %}
-                <input type="hidden" name="price" value="9.95">
-
-            </div>
-        </form>
+        <div class="feature-block" id="feature1">
+             <div onclick="submitForm('9.95')">
 
 
-<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
-    <div class="feature-block" id="feature2" onclick="document.getElementById('selectPlanForm').submit();">
-            <h3>$19.95<br>60 Minutes of Call Time</h3>
-           
-                {% csrf_token %}
-                <input type="hidden" name="price" value="19.95">
-                
+                    <h3>$9.95 for 30 Credit</h3>
+                    <input type="hidden" name="price" value="9.95">
                 </div>
-                </form>
+                </div>
 
+                <div class="feature-block" id="feature2" onclick="submitForm('19.95')">
+                    <h3>$19.95 for 60 Credits</h3>
+                    <input type="hidden" name="price" value="19.95">
+                </div>
 
-<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
-    <div class="feature-block" id="feature3" onclick="document.getElementById('selectPlanForm').submit();">
-            <h3>$29.95<br>100 Minutes of Call Time</h3>
-                            {% csrf_token %}
-                            <input type="hidden" name="price" value="29.95">
-                            
-                            </div>
-                            </form>
+                <div class="feature-block" id="feature3" onclick="submitForm('29.95')">
+                    <h3>$29.95 for 100 Credits</h3>
+                    <input type="hidden" name="price" value="29.95">
+                </div>
 
-<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
-    <div class="feature-block" id="feature4" onclick="document.getElementById('selectPlanForm').submit();">
-            <h3>$49.95<br>200 Minutes of Call Time</h3>
-                                    {% csrf_token %}
-                                    <input type="hidden" name="price" value="49.95">
-                                    
-                                    </div>
-                                    </form>
+                <div class="feature-block" id="feature4" onclick="submitForm('49.95')">
+                    <h3>$49.95 for 200 Credits</h3>
+                    <input type="hidden" name="price" value="49.95">
+                </div>
 
-
-<form action="{% url 'select_plan' %}" method="post" id="selectPlanForm">
-<div class="feature-block" id="feature5" onclick="document.getElementById('selectPlanForm').submit();">
-            <h3>$99.95<br>400 Minutes of Call Time</h3>
-                                        {% csrf_token %}
-                                        <input type="hidden" name="price" value="99.95">
-                                        
-                                        </div>
-                                        </form>
-
-</div>
+                <div class="feature-block" id="feature5" onclick="submitForm('99.95')">
+                    <h3>$99.95 for 400 Credits</h3>
+                    <input type="hidden" name="price" value="99.95">
+                </div>
+            </form>
+        </div>
+    </div>
 </section>
 <style>
     @keyframes shake {
@@ -73,10 +55,37 @@
 
     .feature-block:hover {
         animation: shake 0.5s;
-        /* Adjust time as needed */
         cursor: pointer;
-        /* Optional: Changes the cursor on hover to indicate it's clickable */
     }
 </style>
+<script>
+    function submitForm(priceValue) {
+        document.getElementById('selectPlanForm').price.value = priceValue;
+        document.getElementById('selectPlanForm').submit();
+    }
+</script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const options = {
+            threshold: 0.5
+        };
+
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('rotate');
+                } else {
+                    entry.target.classList.remove('rotate');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, options);
+
+        document.querySelectorAll('.pricing-section').forEach(block => {
+            observer.observe(block);
+        });
+    });
+</script>
 {% endblock %}

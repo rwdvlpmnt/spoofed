@@ -16,6 +16,12 @@ body {
     flex-wrap: wrap;
 }
 
+/* header, .login-section, .communicate-section, .pricing-section, .profile-section, .register-section, .nav-section, .features-section, .home-section {
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    width: 100%;
+} */
+
 /* Header and Navigation */
 .header-left, .header-right {
     display: flex;
@@ -28,7 +34,7 @@ body {
 }
 
 .header-right .menu-icon {
-    height: 75px;
+    height: 100px;
     width: auto;
     display: none;
     cursor: pointer;
@@ -102,17 +108,35 @@ footer {
 }
 
 /* Sections */
+.communicate-section, .login-section, .register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-.communicate-section .form-group, .login-section .form-group, .register-section .form-group, .logout-section .form-group{
+.communicate-section .container, .login-section .container, .register-section .container {
+    background-color: #cbe4f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.communicate-section h2, .login-section h2, .register-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.communicate-section .form-group, .login-section .form-group, .register-section .form-group {
     margin-bottom: 15px;
 }
 
-.communicate-section .form-group label, .login-section .form-group label, .register-section .form-group label, .logout-section .form-group label{
+.communicate-section .form-group label, .login-section .form-group label, .register-section .form-group label {
     display: block;
     margin-bottom: 5px;
 }
 
-.communicate-section .form-group input, .login-section .form-group input, .register-section .form-group input, .logout-section .form-group input{
+.communicate-section .form-group input, .login-section .form-group input, .register-section .form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -120,7 +144,7 @@ footer {
     box-sizing: border-box;
 }
 
-.communicate-section .btn, .login-section .btn, .register-section .btn, .logout-section .btn{
+.communicate-section .btn, .login-section .btn, .register-section .btn {
     width: 100%;
     padding: 10px;
     background-color: #5AA9E6;
@@ -131,26 +155,26 @@ footer {
     font-size: 16px;
 }
 
-.communicate-section .btn:hover, .login-section .btn:hover, .register-section .btn:hover, .logout-section .btn:hover{
+.communicate-section .btn:hover, .login-section .btn:hover, .register-section .btn:hover {
     background-color: #4A91C8;
 }
 
-.communicate-section p, .login-section p, .register-section p, .logout-section p{
+.communicate-section p, .login-section p, .register-section p {
     text-align: center;
     margin: 10px 0;
 }
 
-.communicate-section a, .login-section a, .register-section a, .logout-section a{
+.communicate-section a, .login-section a, .register-section a {
     color: #5AA9E6;
     text-decoration: none;
 }
 
-.communicate-section a:hover, .login-section a:hover, .register-section a:hover, .logout-section a:hover{
+.communicate-section a:hover, .login-section a:hover, .register-section a:hover {
     text-decoration: underline;
 }
 
 /* Pricing Section */
-/* .pricing-section {
+.pricing-section {
     padding: 20px 0;
     text-align: center;
 }
@@ -159,6 +183,73 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* .pricing-plans {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pricing-plan {
+    background-color: #cbe4f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 10px;
+    text-align: left;
+}
+ */
+/* .pricing-plan h3 {
+    margin-top: 0;
+    color: #5aa9e6;
+}
+
+.pricing-plan p {
+    font-size: 24px;
+    color: #5AA9E6;
+    margin: 10px 0;
+}
+
+.pricing-plan ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-plan ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.pricing-plan ul li:last-child {
+    border-bottom: none;
+}
+
+.pricing-plan .btn {
+    display: block;
+    text-align: center;
+    background-color: #5AA9E6;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-plan .btn:hover {
+    background-color: #4A91C8;
+} */
+
+/* @media (max-width: 768px) {
+    .pricing-plan {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 } */
 
 /* Floating elements */
@@ -260,10 +351,6 @@ footer {
     margin: 10px 0 0;
 }
 
-.feature-block a {
-    text-decoration: none;
-}
-
 @keyframes revolve {
     from {
         transform: rotateY(-180deg);
@@ -276,7 +363,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .home-section .container, .features-section .container, .nav-section .container,  .pricing-section .container {
+    .home-section .container, .features-section .container, .nav-section .container, .login-section .container, .register-section .container, .communicate-section .container, .pricing-section .container {
         padding: 10px;
     }
     .feature-block {

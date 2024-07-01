@@ -1,46 +1,45 @@
 <!-- navigation.html -->
- 
+
 {% extends "base.html" %}
 
-{% block title %}
-Navigation
-{% endblock %}
+{% block title %}Navigation{% endblock %}
 
 {% block content %}
 
 <section class="nav-section">
     <div class="container">
-        <a href="{% url 'home' %}">
-            <div class="feature-block" id="feature1">
-                <h2>Home</h2>
-                <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
-            </div>
-        </a>
+        <h2>Navigation</h2>
+        <div class="feature-block" id="feature1">
+            <a href="{% url 'home' %}">
+                    <h3>Home</h3>
+                    <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
+                    </a>
+                </div>
 
-        <a href="{% url 'features' %}">
+            <a href="{% url 'features' %}">
             <div class="feature-block" id="feature2">
-                <h2>Features</h2>
+                <h3>Features</h3>
                 <p>Discover the amazing features of Spoofed Solutions that help you spoof calls easily and securely.</p>
-            </div>
+        </div>
         </a>
 
         <a href="{% url 'communicate' %}">
             <div class="feature-block" id="feature3">
-                <h2>Spoof Call</h2>
+                <h3>Spoof Call</h3>
                 <p>Enter your phone number to start making spoofed calls with our service.</p>
             </div>
         </a>
 
         <a href="{% url 'pricing' %}">
             <div class="feature-block" id="feature4">
-                <h2>Pricing</h2>
+                <h3>Pricing</h3>
                 <p>Check out our pricing plans and choose the one that best fits your needs.</p>
             </div>
         </a>
 
         <a href="{% url 'login' %}">
             <div class="feature-block" id="feature5">
-                <h2>Login</h2>
+                <h3>Login</h3>
                 <p>Login to your account to access all features and manage your spoofed calls.</p>
             </div>
         </a>
@@ -48,10 +47,33 @@ Navigation
 </section>
 
 <style>
-    .nav-section a {
-        text-decoration: none;
-        /* Remove underline from links */
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-5px);
+        }
+
+        50% {
+            transform: translateX(5px);
+        }
+
+        75% {
+            transform: translateX(-5px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
     }
+
+    .feature-block:hover {
+        animation: shake 0.5s;
+        cursor: pointer;
+    }
+    
 </style>
 
 <script>
@@ -95,35 +117,5 @@ Navigation
     });
 </script>
 
-<style>
-    @keyframes shake {
-        0% {
-            transform: translateX(0);
-        }
-
-        25% {
-            transform: translateX(-5px);
-        }
-
-        50% {
-            transform: translateX(5px);
-        }
-
-        75% {
-            transform: translateX(-5px);
-        }
-
-        100% {
-            transform: translateX(0);
-        }
-    }
-
-    .feature-block:hover {
-        animation: shake 0.5s;
-        /* Adjust time as needed */
-        cursor: pointer;
-        /* Optional: Changes the cursor on hover to indicate it's clickable */
-    }
-</style>
 
 {% endblock %}
