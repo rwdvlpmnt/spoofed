@@ -11,25 +11,30 @@
     <div class="container">
         <h2>Register for Spoof Solutions</h2>
         <div class="feature-block" id="feature1">
-        <form method="post" class="registration-form">
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
-                {% if field.help_text %}
-                <small class="form-text text-muted">{{ field.help_text }}</small>
-                {% endif %}
-                {% for error in field.errors %}
-                <div class="alert alert-danger">{{ error }}</div>
+            <form id="register-form" method="post" class="registration-form">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
                 {% endfor %}
-            </div>
-            {% endfor %}
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-        <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="terms">
+                    <label class="form-check-label" for="terms">I agree to the <a
+                            href="{% url 'terms' %}">terms and conditions</a></label>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+        </div>
     </div>
-</div>
 </section>
 
 <script src="{% static 'js/register.js' %}"></script>

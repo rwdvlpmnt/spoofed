@@ -1,8 +1,54 @@
 from django.shortcuts import render, redirect
+
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
+import stripe
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+@csrf_exempt
+@require_POST
+def create_checkout_session(request):
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items=[{
+            'price_data': {
+                'currency': 'usd',
+                'product_data': {
+                    'name': 'Phone Credits',
+                },
+                'unit_amount': 1000,
+            },
+            'quantity': 1,
+        }],
+        mode='payment',
+        success_url=request.build_absolute_uri('/success/'),
+        cancel_url=request.build_absolute_uri('/cancel/'),
+    )
+    return redirect(session.url, code=303)
+
+    # Example of using the session ID to retrieve a payment intent
+    # intent = stripe.PaymentIntent.retrieve(session.payment_intent)
+    # print(intent.client_secret)   # print(intent.client_secret)
+
+    # Example of using the session ID to create a customer
+    # customer = stripe.Customer.create(
+    #     email=request.POST['email'],
+    #     payment_method=request.POST['payment_method_id'],
+    #     invoice_settings={
+    #         'default_payment_method': request.POST['payment_method_id'],
+    #     },
+    # )
+    # print(customer.id)  # print(customer.id)
+
+def login_view(request):
+    return render(request, 'login.html')
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html', {'user': request.user})
 
 def home(request):
     return render(request, 'home.html')

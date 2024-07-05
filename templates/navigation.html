@@ -2,6 +2,8 @@
 
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %}Navigation{% endblock %}
 
 {% block content %}
@@ -13,35 +15,37 @@
             <a href="{% url 'home' %}">
                     <h3>Home</h3>
                     <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
-                    </a>
-                </div>
+            </a>
+        </div>
 
-            <div class="feature-block" id="feature2">
-                <a href="{% url 'features' %}">
+        <div class="feature-block" id="feature2">
+            <a href="{% url 'features' %}">
                 <h3>Features</h3>
                 <p>Discover the amazing features of Spoofed Solutions that help you spoof calls easily and securely.</p>
-        </a>
+            </a>
         </div>
 
+        {% if user.is_authenticated %}
         <div class="feature-block" id="feature3">
-        <a href="{% url 'communicate' %}">            
+            <a href="{% url 'communicate' %}">            
                 <h3>Spoof Call</h3>
                 <p>Enter your phone number to start making spoofed calls with our service.</p>
-        </a>
+            </a>
         </div>
+        {% endif %}
 
         <div class="feature-block" id="feature4">
-        <a href="{% url 'pricing' %}">
+            <a href="{% url 'pricing' %}">
                 <h3>Pricing</h3>
                 <p>Check out our pricing plans and choose the one that best fits your needs.</p>
-        </a>
+            </a>
         </div>
 
         <div class="feature-block" id="feature5">
-        <a href="{% url 'login' %}">
+            <a href="{% url 'login' %}">
                 <h3>Login</h3>
                 <p>Login to your account to access all features and manage your spoofed calls.</p>
-        </a>
+            </a>
         </div>
     </div>
 </section>
@@ -78,30 +82,5 @@
         });
     });
 </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const options = {
-            threshold: 0.5
-        };
-
-        const callback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('rotate');
-                } else {
-                    entry.target.classList.remove('rotate');
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(callback, options);
-
-        document.querySelectorAll('.nav-section').forEach(block => {
-            observer.observe(block);
-        });
-    });
-</script>
-
-
-{% endblock %}
+    
+    {% endblock %}

@@ -12,24 +12,3 @@ $(document).ready(function () {
         }
     });
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', function () {
-            const isActive = this.classList.contains('active');
-            closeAllAccordions();
-            if (!isActive) {
-                this.classList.add('active');
-                this.nextElementSibling.style.display = 'block';
-            }
-        });
-    });
-
-    function closeAllAccordions() {
-        accordionHeaders.forEach(header => {
-            header.classList.remove('active');
-            header.nextElementSibling.style.display = 'none';
-        });
-    }
-});
