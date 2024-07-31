@@ -1,15 +1,17 @@
+# base/urls.py
+
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.home, name='home'),  # Home view
-    path('login/', views.login_view, name='login'),
-    path('logout/', views.logout_view, name='logout'),
+    path('registration/login/', views.login_view, name='login'),
+    path('registration/logout/', views.logout_view, name='logout'),
     path('register/', views.register, name='register'),
-    path('profile/', views.profile, name='profile'),  # Profile view
+    path('profile/', views.profile, name='profile'),
+    path('verify_email/', views.verify_email, name='verify_email'),  # Profile view
     path('features/', views.features, name='features'),
     path('pricing/', views.pricing, name='pricing'),
     path('contact/', views.contact, name='contact'),

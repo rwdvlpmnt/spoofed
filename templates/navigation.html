@@ -1,6 +1,6 @@
 <!-- navigation.html -->
 
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% load static %}
 
@@ -8,7 +8,7 @@
 
 {% block content %}
 
-<section class="nav-section">
+<section class="navigation-section">
     <div class="container">
         <h2>Navigation</h2>
         <div class="feature-block" id="feature1">
@@ -17,14 +17,12 @@
                     <p>Welcome to Spoofed Solutions. Explore our features and start spoofing calls today.</p>
             </a>
         </div>
-
         <div class="feature-block" id="feature2">
             <a href="{% url 'features' %}">
                 <h3>Features</h3>
                 <p>Discover the amazing features of Spoofed Solutions that help you spoof calls easily and securely.</p>
             </a>
         </div>
-
         {% if user.is_authenticated %}
         <div class="feature-block" id="feature3">
             <a href="{% url 'communicate' %}">            
@@ -33,14 +31,12 @@
             </a>
         </div>
         {% endif %}
-
         <div class="feature-block" id="feature4">
             <a href="{% url 'pricing' %}">
                 <h3>Pricing</h3>
                 <p>Check out our pricing plans and choose the one that best fits your needs.</p>
             </a>
         </div>
-
         <div class="feature-block" id="feature5">
             <a href="{% url 'login' %}">
                 <h3>Login</h3>
@@ -75,7 +71,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const menuIcon = document.querySelector('.menu-icon');
-        const navMenu = document.querySelector('.nav-menu'); //.header-right nav ul');
+        const navMenu = document.querySelector('.nav-menu'); 
 
         menuIcon.addEventListener('click', function () {
             navMenu.classList.toggle('show-menu');

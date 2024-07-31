@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
-
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+from django.contrib.auth import login
+from .forms import RegistrationForm
+from .models import Profile
+from .utils import send_verification_email
 
 import stripe
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -59,8 +62,6 @@ def login_view(request):
 def logout_view(request):
     return render(request, 'registration/logout.html')
 
-def register(request):
-    return render(request, 'registration/register.html')
 
 @login_required
 def profile(request):
@@ -133,3 +134,31 @@ def select_plan(request):
     price = request.POST.get('price')
     # Prepare any additional data needed for Stripe
     return render(request, 'stripe.html', {'price': price})
+
+
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.is_active = False  # Deactivate account until it is verified
+            user.save()
+            Profile.objects.create(user=user)
+            send_verification_email(user)
+            return redirect('verify_email')
+    else:
+        form = RegistrationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+def verify_email(request):
+    if request.method == 'POST':
+        code = request.POST['verification_code']
+        try:
+            profile = Profile.objects.get(verification_code=code)
+            profile.user.is_active = True
+            profile.user.save()
+            login(request, profile.user)
+            return redirect('home')
+        except Profile.DoesNotExist:
+            return render(request, 'verify_email.html', {'error': 'Invalid verification code'})
+    return render(request, 'verify_email.html')

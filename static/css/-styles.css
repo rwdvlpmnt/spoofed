@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: rebeccapurple;
-gztt}
+}
 
 .container {
     max-width: 768px;
@@ -104,11 +104,7 @@ footer {
 /* Sections */
 
 .communicate-section .container, .login-section .container, .register-section .container, .logout-section .container{
-   /*  display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px; */
+
       max-width: 768px;
     margin: 0 auto;
     padding: 0 15px;
@@ -218,29 +214,6 @@ footer {
     background-color: #4A91C8;
 }
 
-/* Feature block styles */
-.feature-block {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #cbe4f7;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: revolve 2s ease-in-out;
-}
-
-.feature-block h3 {
-    margin-top: 0;
-    color: #007bff;
-}
-
-.feature-block p {
-    margin: 10px 0 0;
-}
-
-.feature-block a {
-    text-decoration: none;
-}
-
 @keyframes revolve {
     from {
         transform: rotateY(-180deg);
@@ -251,23 +224,7 @@ footer {
         opacity: 1;
     }
 }
-
-@media (max-width: 768px) {
-    .nav-section .container,  .pricing-section .container {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    }
-    
-    .feature-block {
-        padding: 15px;
-    }
-}
- */
+ 
 .logout-link-style {
     background: none!important;
     border: none;
