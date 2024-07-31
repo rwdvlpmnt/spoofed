@@ -1,5 +1,7 @@
 from pathlib import Path
 import os
+import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 
@@ -129,17 +131,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'phoneApp.wsgi.application'
 
 # Database
-# Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+def get_env_variable(var_name):
+    """Get the environment variable or raise an exception."""
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        raise ImproperlyConfigured(f"Set the {var_name} environment variable.")
+        
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'DB_Admin',
-        'PASSWORD': 'TeleTech320$',
-        'HOST': 'postgresql-server.postgres.database.azure.com',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL')
+    )
 }
 
 
