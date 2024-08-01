@@ -10,6 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Redirect to the home page after login
 LOGIN_REDIRECT_URL = '/profile/'
+LOGOUT_REDIRECT_URL = '/home/'
+ACCOUNT_LOGOUT_ON_GET = True
 
 load_dotenv()
 

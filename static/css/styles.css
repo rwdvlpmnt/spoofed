@@ -277,3 +277,26 @@ footer {
     cursor: pointer;
     text-decoration: underline;
 }
+
+/* main.css or within <style> block in login.html */
+
+.social-login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-google, .btn-facebook {
+    width: 48%;
+    text-align: center;
+}
+
+.btn-google {
+    background-color: #db4437; /* Google red */
+    color: white;
+}
+
+.btn-facebook {
+    background-color: #3b5998; /* Facebook blue */
+    color: white;
+}
