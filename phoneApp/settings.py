@@ -29,6 +29,15 @@ STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
 
 DEBUG = True
 
+SECURE_SSL_REDIRECT = True
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://youbeenspoofed.com', 'spoofed.azurewebsites.net', 'youbeenspoofed.com', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com'
+    # Add any other domains you trust
+]
+
+
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'spoofed.azurewebsites.net', 'youbeenspoofed.com', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com']
 
 # Application definition
