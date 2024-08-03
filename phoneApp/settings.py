@@ -20,8 +20,9 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l=o323k5p72f)$p&@_8x6g6o6r9n!b(_-&78ie&jp5ug+ymofu'
-#SECRET_KEY = os.environ['SECRET']
+#SECRET_KEY = 'django-insecure-l=o323k5p72f)$p&@_8x6g6o6r9n!b(_-&78ie&jp5ug+ymofu'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-l=o323k5p72f)$p&@_8x6g6o6r9n!b(_-&78ie&jp5ug+ymofu')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # settings.py or production.py
 STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
@@ -64,6 +65,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.twitter',  # Add twitter provider
     'base.apps.BaseConfig',
+    'sslserver',
+    'django_extensions' 
 ]
 
 SITE_ID = 1
