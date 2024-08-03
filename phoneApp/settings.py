@@ -41,7 +41,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://youbeenspoofed.com', 'spoofed.azurewebsites.net', 'youbeenspoofed.com', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com'
+    'https://youbeenspoofed.com', 'https://spoofed.azurewebsites.net', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com'
 ]
 
     # Add any other domains you trust
