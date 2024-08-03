@@ -1,36 +1,54 @@
-import os
 from pathlib import Path
+import os
 import dj_database_url
-from dotenv import load_dotenv
 from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
 
-# Base directory
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Basic settings
-SECRET_KEY = os.getenv('SECRET_KEY', 'development-secret-key')
-DEBUG = True
 
 # Redirect to the home page after login
 LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/home/'
 ACCOUNT_LOGOUT_ON_GET = True
 
-# Allowed Hosts
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+load_dotenv()
 
-# CSRF Trusted Origins
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-l=o323k5p72f)$p&@_8x6g6o6r9n!b(_-&78ie&jp5ug+ymofu'
+#SECRET_KEY = os.environ['SECRET']
+# SECURITY WARNING: don't run with debug turned on in production!
+# settings.py or production.py
+STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
+STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
+
+DEBUG = True
+
+SECURE_SSL_REDIRECT = True
+
+# Use Secure Cookies
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+# Enable HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
 CSRF_TRUSTED_ORIGINS = [
-    'https://youbeenspoofed.com',
-    'https://spoofed.azurewebsites.net',
-    'https://www.youbeenspoofed.com',
-    'https://www.spoofed.azurewebsites.net'
+    'https://youbeenspoofed.com', 'spoofed.azurewebsites.net', 'youbeenspoofed.com', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com'
 ]
 
-# Installed apps
+    # Add any other domains you trust
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'spoofed.azurewebsites.net', 'youbeenspoofed.com', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com']
+
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +62,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.twitter',  # Add twitter provider
     'base.apps.BaseConfig',
 ]
 
@@ -56,7 +74,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SOCIALACCOUNT_PROVIDERS = {
-    'google': {
+      'google': {
         'SCOPE': [
             'profile',
             'email',
@@ -96,7 +114,6 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-# Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -106,7 +123,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    'allauth.account.middleware.AccountMiddleware',  # Add this line
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -132,10 +149,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'phoneApp.wsgi.application'
 
-# Database configuration
+# Database
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+def get_env_variable(var_name):
+    """Get the environment variable or raise an exception."""
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        raise ImproperlyConfigured(f"Set the {var_name} environment variable.")
+        
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL')
+    )
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -144,9 +173,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
-
-# Email settings for development
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
@@ -162,7 +188,3 @@ MEDIA_URL = '/images/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Stripe configuration
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
