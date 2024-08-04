@@ -1,6 +1,6 @@
-from pathlib import Path
 import os
 import dj_database_url
+from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 

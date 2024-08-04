@@ -1,5 +1,6 @@
 import os
 from .settings import *
+from .settings import BASE_DIR
 from dotenv import load_dotenv
 
 # Load environment variables
