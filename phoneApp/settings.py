@@ -1,32 +1,43 @@
 import os
+#import environ
 import dj_database_url
 from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Define BASE_DIR as the directory containing your manage.py file
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#env = environ.Env()
+#environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# Load environment variables from .env file
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+
+# Print the DATABASE_URL for debugging
+print("DATABASE_URL:", os.getenv('DATABASE_URL'))
+# Debug print statements
+database_url = os.getenv('DATABASE_URL')
+print(f"Loaded DATABASE_URL: {database_url}")
 
 # Redirect to the home page after login
 LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/home/'
 ACCOUNT_LOGOUT_ON_GET = True
 
-load_dotenv()
-
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Use environment variable for the secret key
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', 'n4^y3+mjbrkass$a@#r5ov!og!1a^xg1y^=#^5f178mxqk1l(a)')
+
+# Check that the secret key is set
 if not SECRET_KEY:
     raise ImproperlyConfigured("Set the SECRET_KEY environment variable")
-
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # settings.py or production.py
@@ -50,9 +61,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://youbeenspoofed.com', 'https://spoofed.azurewebsites.net', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com'
 ]
 
-    # Add any other domains you trust
+# Add any other domains you trust
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'spoofed.azurewebsites.net', 'youbeenspoofed.com', 'https://www.spoofed.azurewebsites.net', 'https://www.youbeenspoofed.com']
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -69,9 +79,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.twitter',  # Add twitter provider
+    'phoneApp.apps.PhoneAppConfig',
     'base.apps.BaseConfig',
-    'sslserver',
-    'django_extensions' 
+    #'sslserver',
+    'django_extensions', 
 ]
 
 SITE_ID = 1
@@ -82,7 +93,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SOCIALACCOUNT_PROVIDERS = {
-      'google': {
+    'google': {
         'SCOPE': [
             'profile',
             'email',
@@ -158,21 +169,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'phoneApp.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-def get_env_variable(var_name):
-    """Get the environment variable or raise an exception."""
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        raise ImproperlyConfigured(f"Set the {var_name} environment variable.")
-        
+# Configure the database using dj_database_url
+#DATABASES = {
+#    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+#}
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
-    )
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
+print("Parsed DATABASES:", DATABASES)
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
